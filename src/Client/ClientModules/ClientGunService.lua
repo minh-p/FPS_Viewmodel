@@ -12,12 +12,12 @@ function ClientGunService.new()
 end
 
 
-function ClientGunService:equipViewmodelGun()
+function ClientGunService:bindEquipViewmodelGun()
     
 end
 
 
-function ClientGunService:unequipViewmodelGun()
+function ClientGunService:bindUnequipViewmodelGun()
     
 end
 
