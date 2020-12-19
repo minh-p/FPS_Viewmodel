@@ -3,9 +3,12 @@
 -- Minhnormal
 
 local ClientGunService = {}
+ClientGunService.__index = ClientGunService
 
 function ClientGunService.new()
-    
+    local self = {}
+    setmetatable(self, ClientGunService)
+    return self
 end
 
 
