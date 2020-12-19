@@ -1,0 +1,38 @@
+{
+  "name": "FPS_Viewmodel",
+  "tree": {
+      "$className": "DataModel",
+
+      "ReplicatedStorage": {
+          "$className": "ReplicatedStorage",
+          "SharedModules": {
+            "$className": "Folder",
+            "$path": "src/Shared"
+          }
+      },
+
+      "StarterPlayer": {
+          "$className": "StarterPlayer",
+
+          "StarterPlayerScripts": {
+              "$className": "StarterPlayerScripts",
+              "$path": "src/Client/ClientScripts",
+              
+              "ClientModules": {
+                "$className": "Folder",
+                "$path": "src/Client/ClientModules"
+              }
+          }
+      },
+
+      "ServerScriptService": {
+          "$className": "ServerScriptService",
+          "$path": "src/Server/ServerScripts",
+
+          "ServerModules": {
+            "$className": "Folder",
+            "$path": "src/Server/ServerModules"
+          }
+    }
+  }
+}
