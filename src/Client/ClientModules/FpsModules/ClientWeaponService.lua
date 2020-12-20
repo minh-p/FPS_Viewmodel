@@ -27,6 +27,7 @@ function ClientWeaponService.new(weaponStorer, viewmodelReference)
     --[[
         Parameters:
         weaponStorer: RobloxFolder
+        viewmodelReference: The original viewmodel in ReplicatedStorage.Objects
     ]]
 
     local self = {}
