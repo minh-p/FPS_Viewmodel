@@ -47,7 +47,7 @@ function ViewmodelService:equipWeapon(weaponName)
 
     
     self:unequipWeapon()
-    -- Make a new viewmodel and equip and equip weapon here
+    -- Make a new viewmodel equip weapon here
 end
 
 return ViewmodelService
