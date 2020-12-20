@@ -18,8 +18,8 @@ ClientWeaponService.enumBinds = {
 
 ClientWeaponService.currentPlayerWeaponNames = {
     [1] = "AR",
-    [2] = "",
-    [3] = "",
+    [2] = nil,
+    [3] = nil,
 }
 
 function ClientWeaponService.new(weaponStorer, viewmodelReference)
@@ -42,7 +42,7 @@ function ClientWeaponService:bindEquipViewmodelWeapons()
     for count = 1, #self.currentPlayerWeaponNames do
         local function handleEquipWeapon(actionName, inputState)
             if actionName ~= "EquipWeapon" then return end
-            if inputState == Enum.UserInputState.End then
+            if inputState == Enum.UserInputState.Begin then
                 self.viewmodelService:equipWeapon(self.currentPlayerWeaponNames[count])
             end
         end

@@ -25,6 +25,7 @@ function ViewmodelService.new(weaponStorer, viewmodelReference)
     self.viewmodelReference = viewmodelReference
     self.viewmodel = nil
     self.currentWeapon = nil
+    self.lastWeaponEquippedName = nil
     self.viewmodelRenderEvent = nil
 
     setmetatable(self, ViewmodelService)
@@ -42,10 +43,11 @@ end
 function ViewmodelService:_runViewmodel()
     -- Attach viewmodel to player's HumanoidRootPart (By RenderStepped Event)
     if not self.viewmodel then return end
-    self.viewmodel.Parent = workspace
+    self.viewmodel.Parent = workspace.CurrentCamera
 
     self.viewmodelRenderEvent = RunService.RenderStepped:Connect(function()
-        self.viewmodel:SetPrimaryPartCFrame(workspace.CurrentCamera.CFrame)
+        local updatedViewmodelCFrame = workspace.CurrentCamera.CFrame * CFrame.new(Vector3.new(0, -1, 0)) * CFrame.Angles(0, math.pi/2, 0)
+        self.viewmodel:SetPrimaryPartCFrame(updatedViewmodelCFrame)
     end)
 end
 
@@ -61,7 +63,7 @@ function ViewmodelService:_equip(weapon)
     if not self.viewmodel then return end
 
     local clonedWeapon = weapon:Clone()
-    clonedWeapon.Parent = workspace
+    clonedWeapon.Parent = self.viewmodel
 
     local viewmodelGunAttach = self.viewmodel.RootPart.GunAttach
     viewmodelGunAttach.Part1 = clonedWeapon.GunAttach
@@ -73,6 +75,7 @@ end
 function ViewmodelService:unequipWeapon()
     if not self.currentWeapon or not self.viewmodelRenderEvent or not self.viewmodel then return end
 
+    self.lastWeaponEquippedName = self.currentWeapon.Name
     self.currentWeapon:Destroy()
     self.currentWeapon = nil
 
@@ -95,6 +98,12 @@ function ViewmodelService:equipWeapon(weaponName)
     if not weapon then return end
 
     self:unequipWeapon()
+
+    if weaponName == self.lastWeaponEquippedName then
+        -- If we reach this point, we now know that our last weapon equipped is now considered as nothing.
+        self.lastWeaponEquippedName = nil
+        return    
+    end
 
     self:_getNewViewmodel()
     self:_runViewmodel()

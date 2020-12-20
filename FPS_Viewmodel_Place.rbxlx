@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-17.6276894</X>
-					<Y>6.56423569</Y>
-					<Z>-7.27770519</Z>
-					<R00>0.435158879</R00>
-					<R01>0.515206039</R01>
-					<R02>-0.738376319</R02>
-					<R10>-0</R10>
-					<R11>0.820095897</R11>
-					<R12>0.572226226</R12>
-					<R20>0.90035373</R20>
-					<R21>-0.249009326</R21>
-					<R22>0.356871963</R22>
+					<X>-15.4066124</X>
+					<Y>13.5952263</Y>
+					<Z>-0.202821016</Z>
+					<R00>0.846075952</R00>
+					<R01>0.323204905</R01>
+					<R02>-0.423903555</R02>
+					<R10>1.49011612e-08</R10>
+					<R11>0.795223057</R11>
+					<R12>0.606317163</R12>
+					<R20>0.533062458</R20>
+					<R21>-0.512990355</R21>
+					<R22>0.672819018</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-16.1509323</X>
-					<Y>5.41977978</Y>
-					<Z>-7.99145126</Z>
+					<X>-14.5588055</X>
+					<Y>12.3825922</Y>
+					<Z>-1.5484587</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -323,9 +323,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>-11.4050035</X>
-						<Y>3.04000378</Y>
-						<Z>-13.9950027</Z>
+						<X>-9.26500416</X>
+						<Y>0.590000153</Y>
+						<Z>-17.1850052</Z>
 						<R00>1</R00>
 						<R01>0</R01>
 						<R02>0</R02>
@@ -336,7 +336,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<R21>0</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
-					<bool name="CanCollide">true</bool>
+					<bool name="CanCollide">false</bool>
 					<bool name="CastShadow">true</bool>
 					<int name="CollisionGroupId">0</int>
 					<Color3uint8 name="Color3uint8">4288914085</Color3uint8>
@@ -400,9 +400,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>-12.2000036</X>
-						<Y>3.04000187</Y>
-						<Z>-12.5550079</Z>
+						<X>-10.0600042</X>
+						<Y>0.589998126</Y>
+						<Z>-15.7450104</Z>
 						<R00>1</R00>
 						<R01>0</R01>
 						<R02>0</R02>
@@ -413,7 +413,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<R21>0</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
-					<bool name="CanCollide">true</bool>
+					<bool name="CanCollide">false</bool>
 					<bool name="CastShadow">true</bool>
 					<int name="CollisionGroupId">0</int>
 					<Color3uint8 name="Color3uint8">4288914085</Color3uint8>
@@ -600,9 +600,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>-11.4050035</X>
-						<Y>3.04000378</Y>
-						<Z>-11.1150026</Z>
+						<X>-9.26500416</X>
+						<Y>0.590000153</Y>
+						<Z>-14.3050051</Z>
 						<R00>1</R00>
 						<R01>0</R01>
 						<R02>0</R02>
@@ -613,7 +613,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<R21>0</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
-					<bool name="CanCollide">true</bool>
+					<bool name="CanCollide">false</bool>
 					<bool name="CastShadow">true</bool>
 					<int name="CollisionGroupId">0</int>
 					<Color3uint8 name="Color3uint8">4288914085</Color3uint8>
@@ -720,9 +720,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>-11.8574076</X>
-							<Y>3.30608034</Y>
-							<Z>-12.5597525</Z>
+							<X>-9.71740818</X>
+							<Y>0.856076598</Y>
+							<Z>-15.7497549</Z>
 							<R00>0</R00>
 							<R01>0</R01>
 							<R02>1</R02>
@@ -815,9 +815,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>-11.7876959</X>
-							<Y>2.96690416</Y>
-							<Z>-12.5664663</Z>
+							<X>-9.6476965</X>
+							<Y>0.51690042</Y>
+							<Z>-15.7564688</Z>
 							<R00>0</R00>
 							<R01>0</R01>
 							<R02>1</R02>
@@ -910,9 +910,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>-11.8898058</X>
-							<Y>3.65610218</Y>
-							<Z>-12.4889517</Z>
+							<X>-9.7498064</X>
+							<Y>1.20609844</Y>
+							<Z>-15.6789541</Z>
 							<R00>0</R00>
 							<R01>0</R01>
 							<R02>1</R02>
@@ -1005,9 +1005,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>-12.4171133</X>
-							<Y>3.10902643</Y>
-							<Z>-12.5677023</Z>
+							<X>-10.2771139</X>
+							<Y>0.659022689</Y>
+							<Z>-15.7577047</Z>
 							<R00>0</R00>
 							<R01>0</R01>
 							<R02>-1</R02>
@@ -1243,9 +1243,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>-9.65711498</X>
-							<Y>3.52902651</Y>
-							<Z>-12.5677023</Z>
+							<X>-7.51711559</X>
+							<Y>1.07902288</Y>
+							<Z>-15.7577047</Z>
 							<R00>0</R00>
 							<R01>0</R01>
 							<R02>-1</R02>
@@ -1691,8 +1691,8 @@ ClientWeaponService.enumBinds = {
 
 ClientWeaponService.currentPlayerWeaponNames = {
     [1] = "AR",
-    [2] = "",
-    [3] = "",
+    [2] = nil,
+    [3] = nil,
 }
 
 function ClientWeaponService.new(weaponStorer, viewmodelReference)
@@ -1715,7 +1715,7 @@ function ClientWeaponService:bindEquipViewmodelWeapons()
     for count = 1, #self.currentPlayerWeaponNames do
         local function handleEquipWeapon(actionName, inputState)
             if actionName ~= "EquipWeapon" then return end
-            if inputState == Enum.UserInputState.End then
+            if inputState == Enum.UserInputState.Begin then
                 self.viewmodelService:equipWeapon(self.currentPlayerWeaponNames[count])
             end
         end
@@ -1763,6 +1763,7 @@ function ViewmodelService.new(weaponStorer, viewmodelReference)
     self.viewmodelReference = viewmodelReference
     self.viewmodel = nil
     self.currentWeapon = nil
+    self.lastWeaponEquippedName = nil
     self.viewmodelRenderEvent = nil
 
     setmetatable(self, ViewmodelService)
@@ -1780,10 +1781,11 @@ end
 function ViewmodelService:_runViewmodel()
     -- Attach viewmodel to player's HumanoidRootPart (By RenderStepped Event)
     if not self.viewmodel then return end
-    self.viewmodel.Parent = workspace
+    self.viewmodel.Parent = workspace.CurrentCamera
 
     self.viewmodelRenderEvent = RunService.RenderStepped:Connect(function()
-        self.viewmodel:SetPrimaryPartCFrame(workspace.CurrentCamera.CFrame)
+        local updatedViewmodelCFrame = workspace.CurrentCamera.CFrame * CFrame.new(Vector3.new(0, -1, 0)) * CFrame.Angles(0, math.pi/2, 0)
+        self.viewmodel:SetPrimaryPartCFrame(updatedViewmodelCFrame)
     end)
 end
 
@@ -1799,7 +1801,7 @@ function ViewmodelService:_equip(weapon)
     if not self.viewmodel then return end
 
     local clonedWeapon = weapon:Clone()
-    clonedWeapon.Parent = workspace
+    clonedWeapon.Parent = self.viewmodel
 
     local viewmodelGunAttach = self.viewmodel.RootPart.GunAttach
     viewmodelGunAttach.Part1 = clonedWeapon.GunAttach
@@ -1811,6 +1813,7 @@ end
 function ViewmodelService:unequipWeapon()
     if not self.currentWeapon or not self.viewmodelRenderEvent or not self.viewmodel then return end
 
+    self.lastWeaponEquippedName = self.currentWeapon.Name
     self.currentWeapon:Destroy()
     self.currentWeapon = nil
 
@@ -1834,6 +1837,12 @@ function ViewmodelService:equipWeapon(weaponName)
 
     self:unequipWeapon()
 
+    if weaponName == self.lastWeaponEquippedName then
+        -- If we reach this point, we now know that our last weapon equipped is now considered as nothing.
+        self.lastWeaponEquippedName = nil
+        return    
+    end
+
     self:_getNewViewmodel()
     self:_runViewmodel()
     self:_equip(weapon)
@@ -1853,12 +1862,11 @@ return ViewmodelService]]></ProtectedString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">ClientWeaponViewmodel</string>
 					<string name="ScriptGuid">{F16A04A0-926E-4242-B6B4-20B299EFE955}</string>
-					<ProtectedString name="Source"><![CDATA[wait(6)
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
+					<ProtectedString name="Source"><![CDATA[local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local clientModules = game.Players.LocalPlayer.PlayerScripts.ClientModules
 
-local ClientWeaponService = require(clientModules.FpsModules.ClientWeaponService).new(ReplicatedStorage.Weapons, ReplicatedStorage.Objects.Viewmodel)
+local ClientWeaponService = require(clientModules.FpsModules.ClientWeaponService).new(ReplicatedStorage:WaitForChild("Weapons"), ReplicatedStorage:WaitForChild("Objects").Viewmodel)
 
 ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
@@ -2090,7 +2098,7 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-			<Item class="Model" referent="RBX086DAE9004DE41FD9158587A80D9F10B">
+			<Item class="Model" referent="RBXE8D70B00EBD94132AD2627051556D376">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<token name="LevelOfDetail">0</token>
@@ -2129,11 +2137,11 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 						<Z>0</Z>
 					</Vector3>
 					<string name="Name">Viewmodel</string>
-					<Ref name="PrimaryPart">RBX7289CD9ECB7747ACA3168B223425BEE7</Ref>
+					<Ref name="PrimaryPart">RBX3F9F9DEADB3741BBB79FD78E7E51384D</Ref>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="Part" referent="RBX6AAA5CB1D65645839FE922D19FEE087F">
+				<Item class="Part" referent="RBX6303EF428B6F4073BACE4BBFB0B5E7C4">
 					<Properties>
 						<bool name="Anchored">false</bool>
 						<BinaryString name="AttributesSerialize"></BinaryString>
@@ -2159,7 +2167,7 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 							<R21>0</R21>
 							<R22>1</R22>
 						</CoordinateFrame>
-						<bool name="CanCollide">true</bool>
+						<bool name="CanCollide">false</bool>
 						<bool name="CastShadow">true</bool>
 						<int name="CollisionGroupId">0</int>
 						<Color3uint8 name="Color3uint8">4288914085</Color3uint8>
@@ -2210,7 +2218,7 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 						</Vector3>
 					</Properties>
 				</Item>
-				<Item class="Part" referent="RBX7289CD9ECB7747ACA3168B223425BEE7">
+				<Item class="Part" referent="RBX3F9F9DEADB3741BBB79FD78E7E51384D">
 					<Properties>
 						<bool name="Anchored">false</bool>
 						<BinaryString name="AttributesSerialize"></BinaryString>
@@ -2236,7 +2244,7 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 							<R21>0</R21>
 							<R22>1</R22>
 						</CoordinateFrame>
-						<bool name="CanCollide">true</bool>
+						<bool name="CanCollide">false</bool>
 						<bool name="CastShadow">true</bool>
 						<int name="CollisionGroupId">0</int>
 						<Color3uint8 name="Color3uint8">4288914085</Color3uint8>
@@ -2286,7 +2294,7 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 							<Z>2.04998875</Z>
 						</Vector3>
 					</Properties>
-					<Item class="Motor6D" referent="RBX647093B8479147C78219AD9598A51EC6">
+					<Item class="Motor6D" referent="RBX1619A10F94224C3BA76CDBE03B951779">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<CoordinateFrame name="C0">
@@ -2321,13 +2329,13 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 							<bool name="Enabled">true</bool>
 							<float name="MaxVelocity">0</float>
 							<string name="Name">LeftArm</string>
-							<Ref name="Part0">RBX7289CD9ECB7747ACA3168B223425BEE7</Ref>
-							<Ref name="Part1">RBX6AAA5CB1D65645839FE922D19FEE087F</Ref>
+							<Ref name="Part0">RBX3F9F9DEADB3741BBB79FD78E7E51384D</Ref>
+							<Ref name="Part1">RBX6303EF428B6F4073BACE4BBFB0B5E7C4</Ref>
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
-					<Item class="Motor6D" referent="RBXDDDE5A98F6F04EE28491A0AF86729409">
+					<Item class="Motor6D" referent="RBXE6FDF3F966C1453D9DC4A2B5F4E6D686">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<CoordinateFrame name="C0">
@@ -2362,13 +2370,13 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 							<bool name="Enabled">true</bool>
 							<float name="MaxVelocity">0</float>
 							<string name="Name">RightArm</string>
-							<Ref name="Part0">RBX7289CD9ECB7747ACA3168B223425BEE7</Ref>
-							<Ref name="Part1">RBX30C65E331C2649F086C608C2F979614F</Ref>
+							<Ref name="Part0">RBX3F9F9DEADB3741BBB79FD78E7E51384D</Ref>
+							<Ref name="Part1">RBX3D09FB9723974F12B08E19FF53E3F1D8</Ref>
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
-					<Item class="Motor6D" referent="RBXAF439E75418D411A9F9AD5CBED4093DE">
+					<Item class="Motor6D" referent="RBXB4649D37042F4F0C91B4F98B3F85AF59">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<CoordinateFrame name="C0">
@@ -2403,14 +2411,14 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 							<bool name="Enabled">true</bool>
 							<float name="MaxVelocity">0</float>
 							<string name="Name">GunAttach</string>
-							<Ref name="Part0">RBX7289CD9ECB7747ACA3168B223425BEE7</Ref>
-							<Ref name="Part1">RBX548F999AFE7F47548A5CD4A068655F74</Ref>
+							<Ref name="Part0">RBX3F9F9DEADB3741BBB79FD78E7E51384D</Ref>
+							<Ref name="Part1">RBXFB781ABCA1CE4B15BC62843D450A29C6</Ref>
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
 				</Item>
-				<Item class="Part" referent="RBX30C65E331C2649F086C608C2F979614F">
+				<Item class="Part" referent="RBX3D09FB9723974F12B08E19FF53E3F1D8">
 					<Properties>
 						<bool name="Anchored">false</bool>
 						<BinaryString name="AttributesSerialize"></BinaryString>
@@ -2436,7 +2444,7 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 							<R21>0</R21>
 							<R22>1</R22>
 						</CoordinateFrame>
-						<bool name="CanCollide">true</bool>
+						<bool name="CanCollide">false</bool>
 						<bool name="CastShadow">true</bool>
 						<int name="CollisionGroupId">0</int>
 						<Color3uint8 name="Color3uint8">4288914085</Color3uint8>
@@ -2487,184 +2495,20 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 						</Vector3>
 					</Properties>
 				</Item>
-				<Item class="AnimationController" referent="RBXF137C1052FB1488687D075F7FA2C60BC">
+				<Item class="AnimationController" referent="RBX3E39F64D08094F1CBA39F4B3C124EF93">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<string name="Name">AnimationController</string>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
-					<Item class="Animator" referent="RBX29B43E0222054F7B869FE798B3275237">
+					<Item class="Animator" referent="RBXFCBD5CAA9EF340D1A78063229D806110">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<string name="Name">Animator</string>
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
-					</Item>
-				</Item>
-				<Item class="Model" referent="RBX5DA86C45555C4C6CBA8C5556486270D9">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<token name="LevelOfDetail">0</token>
-						<CoordinateFrame name="ModelInPrimary">
-							<X>0</X>
-							<Y>0</Y>
-							<Z>0</Z>
-							<R00>1</R00>
-							<R01>0</R01>
-							<R02>0</R02>
-							<R10>0</R10>
-							<R11>1</R11>
-							<R12>0</R12>
-							<R20>0</R20>
-							<R21>0</R21>
-							<R22>1</R22>
-						</CoordinateFrame>
-						<CoordinateFrame name="ModelMeshCFrame">
-							<X>0</X>
-							<Y>0</Y>
-							<Z>0</Z>
-							<R00>1</R00>
-							<R01>0</R01>
-							<R02>0</R02>
-							<R10>0</R10>
-							<R11>1</R11>
-							<R12>0</R12>
-							<R20>0</R20>
-							<R21>0</R21>
-							<R22>1</R22>
-						</CoordinateFrame>
-						<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
-						<Vector3 name="ModelMeshSize">
-							<X>0</X>
-							<Y>0</Y>
-							<Z>0</Z>
-						</Vector3>
-						<string name="Name">AnimSaves</string>
-						<Ref name="PrimaryPart">null</Ref>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-					<Item class="KeyframeSequence" referent="RBXC59DE9B2993F4EF1AFB09FA58147F6A8">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<float name="AuthoredHipHeight">2</float>
-							<bool name="Loop">false</bool>
-							<string name="Name">ViewmodelIdle</string>
-							<token name="Priority">1000</token>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags">MTYwODM5OTQzOA==</BinaryString>
-						</Properties>
-						<Item class="Keyframe" referent="RBX0E92F9524C4149E7AAAF1319083E569F">
-							<Properties>
-								<BinaryString name="AttributesSerialize"></BinaryString>
-								<string name="Name">Keyframe</string>
-								<int64 name="SourceAssetId">-1</int64>
-								<BinaryString name="Tags"></BinaryString>
-								<float name="Time">0</float>
-							</Properties>
-							<Item class="Pose" referent="RBX6E6D1F04E6D94D25B32C73593370D922">
-								<Properties>
-									<BinaryString name="AttributesSerialize"></BinaryString>
-									<CoordinateFrame name="CFrame">
-										<X>0</X>
-										<Y>0</Y>
-										<Z>0</Z>
-										<R00>1</R00>
-										<R01>0</R01>
-										<R02>0</R02>
-										<R10>0</R10>
-										<R11>1</R11>
-										<R12>0</R12>
-										<R20>0</R20>
-										<R21>0</R21>
-										<R22>1</R22>
-									</CoordinateFrame>
-									<token name="EasingDirection">0</token>
-									<token name="EasingStyle">0</token>
-									<string name="Name">RootPart</string>
-									<int64 name="SourceAssetId">-1</int64>
-									<BinaryString name="Tags"></BinaryString>
-									<float name="Weight">0</float>
-								</Properties>
-								<Item class="Pose" referent="RBXC93F0F1766E94980BF65901DD3389566">
-									<Properties>
-										<BinaryString name="AttributesSerialize"></BinaryString>
-										<CoordinateFrame name="CFrame">
-											<X>-2.26000214</X>
-											<Y>-0.249996662</Y>
-											<Z>-0.380000114</Z>
-											<R00>1</R00>
-											<R01>0</R01>
-											<R02>0</R02>
-											<R10>0</R10>
-											<R11>1</R11>
-											<R12>0</R12>
-											<R20>0</R20>
-											<R21>0</R21>
-											<R22>1</R22>
-										</CoordinateFrame>
-										<token name="EasingDirection">0</token>
-										<token name="EasingStyle">0</token>
-										<string name="Name">RightArm</string>
-										<int64 name="SourceAssetId">-1</int64>
-										<BinaryString name="Tags"></BinaryString>
-										<float name="Weight">1</float>
-									</Properties>
-								</Item>
-								<Item class="Pose" referent="RBX9C618427442B41EA82F71DBCBDC24661">
-									<Properties>
-										<BinaryString name="AttributesSerialize"></BinaryString>
-										<CoordinateFrame name="CFrame">
-											<X>-0.329999924</X>
-											<Y>-0.43999505</Y>
-											<Z>0</Z>
-											<R00>0.795487046</R00>
-											<R01>0.355796754</R01>
-											<R02>-0.490519106</R02>
-											<R10>2.98023224e-08</R10>
-											<R11>0.809476733</R11>
-											<R12>0.587151885</R12>
-											<R20>0.605970562</R20>
-											<R21>-0.467071742</R21>
-											<R22>0.643928289</R22>
-										</CoordinateFrame>
-										<token name="EasingDirection">0</token>
-										<token name="EasingStyle">0</token>
-										<string name="Name">LeftArm</string>
-										<int64 name="SourceAssetId">-1</int64>
-										<BinaryString name="Tags"></BinaryString>
-										<float name="Weight">1</float>
-									</Properties>
-								</Item>
-								<Item class="Pose" referent="RBXBBED7CF5E2404E0484FD4D5E962F501C">
-									<Properties>
-										<BinaryString name="AttributesSerialize"></BinaryString>
-										<CoordinateFrame name="CFrame">
-											<X>1.02999878</X>
-											<Y>-0.249999762</Y>
-											<Z>-2.49999952</Z>
-											<R00>1</R00>
-											<R01>0</R01>
-											<R02>0</R02>
-											<R10>0</R10>
-											<R11>1</R11>
-											<R12>0</R12>
-											<R20>0</R20>
-											<R21>0</R21>
-											<R22>1</R22>
-										</CoordinateFrame>
-										<token name="EasingDirection">0</token>
-										<token name="EasingStyle">0</token>
-										<string name="Name">GunAttach</string>
-										<int64 name="SourceAssetId">-1</int64>
-										<BinaryString name="Tags"></BinaryString>
-										<float name="Weight">1</float>
-									</Properties>
-								</Item>
-							</Item>
-						</Item>
 					</Item>
 				</Item>
 			</Item>
@@ -2745,7 +2589,7 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 							<R21>0</R21>
 							<R22>0</R22>
 						</CoordinateFrame>
-						<bool name="CanCollide">true</bool>
+						<bool name="CanCollide">false</bool>
 						<bool name="CastShadow">true</bool>
 						<int name="CollisionGroupId">0</int>
 						<Color3uint8 name="Color3uint8">4288914085</Color3uint8>
@@ -2840,7 +2684,7 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 							<R21>0</R21>
 							<R22>0</R22>
 						</CoordinateFrame>
-						<bool name="CanCollide">true</bool>
+						<bool name="CanCollide">false</bool>
 						<bool name="CastShadow">true</bool>
 						<int name="CollisionGroupId">0</int>
 						<Color3uint8 name="Color3uint8">4283057993</Color3uint8>
@@ -2935,7 +2779,7 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 							<R21>0</R21>
 							<R22>0</R22>
 						</CoordinateFrame>
-						<bool name="CanCollide">true</bool>
+						<bool name="CanCollide">false</bool>
 						<bool name="CastShadow">true</bool>
 						<int name="CollisionGroupId">0</int>
 						<Color3uint8 name="Color3uint8">4288914085</Color3uint8>
@@ -3030,7 +2874,7 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 							<R21>0</R21>
 							<R22>0</R22>
 						</CoordinateFrame>
-						<bool name="CanCollide">true</bool>
+						<bool name="CanCollide">false</bool>
 						<bool name="CastShadow">true</bool>
 						<int name="CollisionGroupId">0</int>
 						<Color3uint8 name="Color3uint8">4293040960</Color3uint8>
@@ -3268,7 +3112,7 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 							<R21>0</R21>
 							<R22>0</R22>
 						</CoordinateFrame>
-						<bool name="CanCollide">true</bool>
+						<bool name="CanCollide">false</bool>
 						<bool name="CastShadow">true</bool>
 						<int name="CollisionGroupId">0</int>
 						<Color3uint8 name="Color3uint8">4294901760</Color3uint8>
