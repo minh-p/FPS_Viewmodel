@@ -17,12 +17,12 @@ ClientWeaponService.enumBinds = {
 
 
 ClientWeaponService.currentPlayerWeaponNames = {
-    [1] = "",
+    [1] = "AR",
     [2] = "",
     [3] = "",
 }
 
-function ClientWeaponService.new(weaponStorer)
+function ClientWeaponService.new(weaponStorer, viewmodelReference)
 
     --[[
         Parameters:
@@ -31,7 +31,7 @@ function ClientWeaponService.new(weaponStorer)
 
     local self = {}
 
-    self.viewmodelService = require(clientModules.FpsModules.ViewmodelService).new(weaponStorer)
+    self.viewmodelService = require(clientModules.FpsModules.ViewmodelService).new(weaponStorer, viewmodelReference)
 
     setmetatable(self, ClientWeaponService)
     return self
