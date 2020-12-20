@@ -38,17 +38,18 @@ function ClientWeaponService.new(weaponStorer)
 end
 
 
-function ClientWeaponService:bindEquipViewmodelWeapon()
-    ContextActionService:BindAction(function()
-        self.viewmodelService:equipWeapon()
-    end)
-end
+function ClientWeaponService:bindEquipViewmodelWeapons()
+    for count = 1, #self.currentPlayerWeaponNames do
+        local function handleEquipWeapon(actionName, inputState)
+            if actionName ~= "EquipWeapon" then return end
+            if inputState == Enum.UserInputState.End then
+                self.viewmodelService:equipWeapon(self.currentPlayerWeaponNames[count])
+            end
+        end
 
-
-function ClientWeaponService:bindUnequipViewmodelWeapon()
-    ContextActionService:BindAction(function()
-        self.viewmodel:unequipWeapon()
-    end)
+        local currentEnumBind = self.enumBinds[count]
+        ContextActionService:BindAction("EquipWeapon", handleEquipWeapon, false, Enum.KeyCode[currentEnumBind])
+    end
 end
 
 return ClientWeaponService
