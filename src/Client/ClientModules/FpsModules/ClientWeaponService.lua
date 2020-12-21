@@ -1,5 +1,5 @@
 -- Client Framework for Fps viewmodel
--- 12/9/2020
+-- 22/9/2020
 -- Minhnormal
 
 local ContextActionService = game:GetService("ContextActionService")
@@ -18,7 +18,7 @@ ClientWeaponService.enumBinds = {
 
 ClientWeaponService.currentPlayerWeaponNames = {
     [1] = "AR",
-    [2] = nil,
+    [2] = "ARClone",
     [3] = nil,
 }
 
@@ -40,16 +40,17 @@ end
 
 
 function ClientWeaponService:bindEquipViewmodelWeapons()
-    for count = 1, #self.currentPlayerWeaponNames do
-        local function handleEquipWeapon(actionName, inputState)
-            if actionName ~= "EquipWeapon" then return end
+    for count, _ in ipairs(self.currentPlayerWeaponNames) do
+        local currentEnumBind = self.enumBinds[count]
+        local currentPlayerWeaponName = self.currentPlayerWeaponNames[count]
+    
+        local function handleEquipWeapon(_, inputState)
             if inputState == Enum.UserInputState.Begin then
-                self.viewmodelService:equipWeapon(self.currentPlayerWeaponNames[count])
+                self.viewmodelService:equipWeapon(currentPlayerWeaponName)
             end
         end
-
-        local currentEnumBind = self.enumBinds[count]
-        ContextActionService:BindAction("EquipWeapon", handleEquipWeapon, false, Enum.KeyCode[currentEnumBind])
+    
+        ContextActionService:BindAction("EquipWeaponSlot " .. tostring(count), handleEquipWeapon, false, Enum.KeyCode[currentEnumBind])
     end
 end
 

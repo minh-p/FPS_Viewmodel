@@ -2,6 +2,11 @@
 -- 12/19/2020
 -- Minhnormal
 
+--[[
+    How to use, currently of 12/20/2020
+    The gun need to primary part as an object named "GunAttach", for this to work.
+]]
+
 local RunService = game:GetService("RunService")
 
 local ViewmodelService = {}
