@@ -67,13 +67,25 @@ function ViewmodelService:_equip(weapon)
     if not weapon then return end
     if not self.viewmodel then return end
 
+    local viewmodelGunAttach = self.viewmodel.PrimaryPart.GunAttach
+    if not viewmodelGunAttach then return end
+
     local clonedWeapon = weapon:Clone()
     clonedWeapon.Parent = self.viewmodel
 
-    local viewmodelGunAttach = self.viewmodel.RootPart.GunAttach
     viewmodelGunAttach.Part1 = clonedWeapon.GunAttach
 
     self.currentWeapon = clonedWeapon
+
+    local weaponAnimations = self.currentWeapon:FindFirstChild("Animations")
+    if weaponAnimations then
+        local idleAnimation = weaponAnimations:FindFirstChild("Idle")
+        if not idleAnimation then return end
+        
+        local animator = self.viewmodel.AnimationController:WaitForChild("Animator")
+        local idleTrack = animator:LoadAnimation(idleAnimation)
+        idleTrack:Play()
+    end
 end
 
 
