@@ -8,6 +8,7 @@
 ]]
 
 local RunService = game:GetService("RunService")
+local TweenService = game:GetService("TweenService")
 
 local ViewmodelService = {}
 ViewmodelService.__index = ViewmodelService
@@ -51,7 +52,8 @@ function ViewmodelService:_runViewmodel()
     self.viewmodel.Parent = workspace.CurrentCamera
 
     self.viewmodelRenderEvent = RunService.RenderStepped:Connect(function()
-        local updatedViewmodelCFrame = workspace.CurrentCamera.CFrame * CFrame.new(Vector3.new(0, -1, 0)) * CFrame.Angles(0, math.pi/2, 0)
+        -- CFrame.new(Vector3.new(0, -1, 0)) * CFrame.Angles(0, math.pi/2, 0)
+        local updatedViewmodelCFrame = workspace.CurrentCamera.CoordinateFrame * CFrame.new(Vector3.new(0, -1, 0)) * CFrame.Angles(0, math.pi/2 + math.rad(math.sin(tick()) * 2) , 0)
         self.viewmodel:SetPrimaryPartCFrame(updatedViewmodelCFrame)
     end)
 end
