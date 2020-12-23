@@ -7,6 +7,9 @@
     The gun need to primary part as an object named "GunAttach", for this to work.
 ]]
 
+local PlayerScripts = game.Players.LocalPlayer.PlayerScripts
+local clientModules = PlayerScripts.ClientModules
+
 local RunService = game:GetService("RunService")
 
 local ViewmodelService = {}
@@ -25,6 +28,8 @@ function ViewmodelService.new(weaponStorer, viewmodelReference)
     if not viewmodelReference:IsA("Model") then return end
 
     local self = {}
+
+    self.viewmodelSway = require(clientModules.FpsModules.ViewmodelSwayService).new()
 
     self.weaponStorer = weaponStorer
     self.viewmodelReference = viewmodelReference
@@ -50,10 +55,12 @@ function ViewmodelService:_runViewmodel()
     if not self.viewmodel then return end
     self.viewmodel.Parent = workspace.CurrentCamera
 
+    self.viewmodelSway:setupViewmodel(self.viewmodel)
+
     self.viewmodelRenderEvent = RunService.RenderStepped:Connect(function()
         -- CFrame.new(Vector3.new(0, -1, 0)) * CFrame.Angles(0, math.pi/2, 0)
-        local updatedViewmodelCFrame = workspace.CurrentCamera.CoordinateFrame * CFrame.new(Vector3.new(0, -1, 0)) * CFrame.Angles(0, math.pi/2 + math.rad(math.sin(tick()) * 2) , 0)
-        self.viewmodel:SetPrimaryPartCFrame(updatedViewmodelCFrame)
+        local viewmodelSwayAnchorPoint = workspace.CurrentCamera.CoordinateFrame * CFrame.new(Vector3.new(0, -1, 0)) * CFrame.Angles(0, math.pi/2 , 0)
+        self.viewmodelSway:sway(viewmodelSwayAnchorPoint)
     end)
 end
 
