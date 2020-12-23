@@ -1,60 +1,60 @@
-<mxfile host="app.diagrams.net" modified="2020-12-23T16:17:28.899Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36 Edg/87.0.664.66" etag="jyCtwaQnRATz4OiamftS" version="14.0.1" type="github">
+<mxfile host="app.diagrams.net" modified="2020-12-23T16:31:25.059Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36 Edg/87.0.664.66" etag="3XA1JYgUBbgPj9R2UUDE" version="14.0.1" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="1457" dy="718" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
-        <mxCell id="RuDCrDcI4RsFDIPjybmg-0" value="ClientWeaponService" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="RuDCrDcI4RsFDIPjybmg-0" value="ClientWeaponService" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="30" y="140" width="270" height="126" as="geometry" />
         </mxCell>
-        <mxCell id="RuDCrDcI4RsFDIPjybmg-1" value="+ viewmodelService: ViewmodelService&#xa;+ enumBinds: dictionary&#xa;+ currentPlayerWeaponNames: dictionary&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="RuDCrDcI4RsFDIPjybmg-0">
+        <mxCell id="RuDCrDcI4RsFDIPjybmg-1" value="+ viewmodelService: ViewmodelService&#xa;+ enumBinds: dictionary&#xa;+ currentPlayerWeaponNames: dictionary&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="RuDCrDcI4RsFDIPjybmg-0" vertex="1">
           <mxGeometry y="26" width="270" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="RuDCrDcI4RsFDIPjybmg-2" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="RuDCrDcI4RsFDIPjybmg-0">
+        <mxCell id="RuDCrDcI4RsFDIPjybmg-2" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="RuDCrDcI4RsFDIPjybmg-0" vertex="1">
           <mxGeometry y="76" width="270" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="RuDCrDcI4RsFDIPjybmg-3" value="+ new(): new ClientWeaponService&#xa;+ bindEquipViewmodelWeapons(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="RuDCrDcI4RsFDIPjybmg-0">
+        <mxCell id="RuDCrDcI4RsFDIPjybmg-3" value="+ new(): new ClientWeaponService&#xa;+ bindEquipViewmodelWeapons(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="RuDCrDcI4RsFDIPjybmg-0" vertex="1">
           <mxGeometry y="84" width="270" height="42" as="geometry" />
         </mxCell>
-        <mxCell id="RuDCrDcI4RsFDIPjybmg-4" value="&lt;font style=&quot;font-size: 18px&quot;&gt;FPS_Viewmodel Client Side&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="RuDCrDcI4RsFDIPjybmg-4" value="&lt;font style=&quot;font-size: 18px&quot;&gt;FPS_Viewmodel Client Side&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="270" y="50" width="130" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="RuDCrDcI4RsFDIPjybmg-6" value="ViewmodelService" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="RuDCrDcI4RsFDIPjybmg-6" value="ViewmodelService" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="470" y="140" width="310" height="230" as="geometry" />
         </mxCell>
-        <mxCell id="RuDCrDcI4RsFDIPjybmg-7" value="+ viewmodelSway: ViewmodelSwayService&#xa;+ weaponStorer: Folder&#xa;+ viewmodelReference: Model&#xa;+ viewmodel: Model&#xa;+ currentWeapon: Model&#xa;+ lastWeaponEquipped: Model&#xa;+ viewmodelRenderEvent = RunService.RenderStepped&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="RuDCrDcI4RsFDIPjybmg-6">
+        <mxCell id="RuDCrDcI4RsFDIPjybmg-7" value="+ viewmodelSway: ViewmodelSwayService&#xa;+ weaponStorer: Folder&#xa;+ viewmodelReference: Model&#xa;+ viewmodel: Model&#xa;+ currentWeapon: Model&#xa;+ lastWeaponEquipped: Model&#xa;+ viewmodelRenderEvent = RunService.RenderStepped&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="RuDCrDcI4RsFDIPjybmg-6" vertex="1">
           <mxGeometry y="26" width="310" height="104" as="geometry" />
         </mxCell>
-        <mxCell id="RuDCrDcI4RsFDIPjybmg-8" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="RuDCrDcI4RsFDIPjybmg-6">
+        <mxCell id="RuDCrDcI4RsFDIPjybmg-8" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="RuDCrDcI4RsFDIPjybmg-6" vertex="1">
           <mxGeometry y="130" width="310" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="RuDCrDcI4RsFDIPjybmg-9" value="+ new(): new ViewmodelService&#xa;- _getNewViewmodel(): void&#xa;- _runViewmodel(): void&#xa;- _equip(): void&#xa;+ unequipWeapon(): void&#xa;+ equipWeapon() void&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="RuDCrDcI4RsFDIPjybmg-6">
+        <mxCell id="RuDCrDcI4RsFDIPjybmg-9" value="+ new(): new ViewmodelService&#xa;- _getNewViewmodel(): void&#xa;- _runViewmodel(): void&#xa;- _equip(): void&#xa;+ unequipWeapon(): void&#xa;+ equipWeapon() void&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="RuDCrDcI4RsFDIPjybmg-6" vertex="1">
           <mxGeometry y="138" width="310" height="92" as="geometry" />
         </mxCell>
-        <mxCell id="RuDCrDcI4RsFDIPjybmg-11" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;entryX=0.008;entryY=0.999;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="RuDCrDcI4RsFDIPjybmg-1" target="RuDCrDcI4RsFDIPjybmg-7">
+        <mxCell id="RuDCrDcI4RsFDIPjybmg-11" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;entryX=0.008;entryY=0.999;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="RuDCrDcI4RsFDIPjybmg-1" target="RuDCrDcI4RsFDIPjybmg-7" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="280" y="440" as="sourcePoint" />
             <mxPoint x="440" y="440" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="RuDCrDcI4RsFDIPjybmg-12" value="viewmodelService" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="RuDCrDcI4RsFDIPjybmg-11">
+        <mxCell id="RuDCrDcI4RsFDIPjybmg-12" value="viewmodelService" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="RuDCrDcI4RsFDIPjybmg-11" vertex="1" connectable="0">
           <mxGeometry x="-0.3848" relative="1" as="geometry">
             <mxPoint x="23.93" y="-25.35" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="RuDCrDcI4RsFDIPjybmg-13" value="ViewmodelSwayService" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="255" y="450" width="200" height="100" as="geometry" />
+        <mxCell id="RuDCrDcI4RsFDIPjybmg-13" value="ViewmodelSwayService" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="255" y="450" width="200" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="RuDCrDcI4RsFDIPjybmg-14" value="+ viewmodel: Model" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="RuDCrDcI4RsFDIPjybmg-13">
+        <mxCell id="RuDCrDcI4RsFDIPjybmg-14" value="+ viewmodel: Model" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="RuDCrDcI4RsFDIPjybmg-13" vertex="1">
           <mxGeometry y="26" width="200" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="RuDCrDcI4RsFDIPjybmg-15" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="RuDCrDcI4RsFDIPjybmg-13">
+        <mxCell id="RuDCrDcI4RsFDIPjybmg-15" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="RuDCrDcI4RsFDIPjybmg-13" vertex="1">
           <mxGeometry y="52" width="200" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="RuDCrDcI4RsFDIPjybmg-16" value="+ new(): new WeaponSwayService&#xa;+ runSway(weapon): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="RuDCrDcI4RsFDIPjybmg-13">
-          <mxGeometry y="60" width="200" height="40" as="geometry" />
+        <mxCell id="RuDCrDcI4RsFDIPjybmg-16" value="+ new(): new WeaponSwayService&#xa;+ setupViewmodel(): void&#xa;+ runSway(weapon): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="RuDCrDcI4RsFDIPjybmg-13" vertex="1">
+          <mxGeometry y="60" width="200" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="RuDCrDcI4RsFDIPjybmg-18" value="viewmodelSway" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="RuDCrDcI4RsFDIPjybmg-9" target="RuDCrDcI4RsFDIPjybmg-13">
+        <mxCell id="RuDCrDcI4RsFDIPjybmg-18" value="viewmodelSway" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="RuDCrDcI4RsFDIPjybmg-9" target="RuDCrDcI4RsFDIPjybmg-13" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="240" y="400" as="sourcePoint" />
             <mxPoint x="400" y="400" as="targetPoint" />
