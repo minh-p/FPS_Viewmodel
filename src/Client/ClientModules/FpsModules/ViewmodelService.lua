@@ -36,7 +36,7 @@ function ViewmodelService.new(weaponStorer, viewmodelReference)
     self.viewmodel = nil
     self.currentWeapon = nil
     self.lastWeaponEquippedName = nil
-    self.viewmodelBindRenderName = "MoveViewmodel"
+    self.viewmodelRenderEvent = nil
 
     setmetatable(self, ViewmodelService)
     return self
@@ -65,7 +65,7 @@ function ViewmodelService:_runViewmodel()
         self.viewmodelSway:sway(viewmodelSwayAnchorPoint)
     end
 
-    RunService.RenderStepped:Connect(moveViewmodel)
+    self.viewmodelRenderEvent = RunService.RenderStepped:Connect(moveViewmodel)
 end
 
 
@@ -108,7 +108,8 @@ function ViewmodelService:unequipWeapon()
     self.currentWeapon:Destroy()
     self.currentWeapon = nil
 
-    RunService:UnbindFromRenderStep(self.viewmodelBindRenderName)
+    self.viewmodelRenderEvent:Disconnect()
+    self.viewmodelRenderEvent = nil
 
     self.viewmodel:Destroy()
     self.viewmodel = nil

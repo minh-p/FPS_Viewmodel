@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-7.85269165</X>
-					<Y>13.1120529</Y>
-					<Z>39.2765923</Z>
-					<R00>0.793574929</R00>
-					<R01>-0.21209754</R01>
-					<R02>0.570310056</R02>
+					<X>-19.8158703</X>
+					<Y>6.44776487</Y>
+					<Z>33.1553497</Z>
+					<R00>0.793575108</R00>
+					<R01>-0.212097481</R01>
+					<R02>0.570309758</R02>
 					<R10>-0</R10>
-					<R11>0.93728143</R11>
-					<R12>0.348573655</R12>
-					<R20>-0.608472645</R20>
-					<R21>-0.276619315</R21>
-					<R22>0.743802965</R22>
+					<R11>0.93728137</R11>
+					<R12>0.348573774</R12>
+					<R20>-0.608472288</R20>
+					<R21>-0.276619464</R21>
+					<R22>0.743803203</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-8.99331188</X>
-					<Y>12.4149055</Y>
-					<Z>37.7889862</Z>
+					<X>-20.9564896</X>
+					<Y>5.7506175</Y>
+					<Z>31.6677437</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -1776,7 +1776,7 @@ function ViewmodelService.new(weaponStorer, viewmodelReference)
     self.viewmodel = nil
     self.currentWeapon = nil
     self.lastWeaponEquippedName = nil
-    self.viewmodelBindRenderName = "MoveViewmodel"
+    self.viewmodelRenderEvent = nil
 
     setmetatable(self, ViewmodelService)
     return self
@@ -1805,7 +1805,7 @@ function ViewmodelService:_runViewmodel()
         self.viewmodelSway:sway(viewmodelSwayAnchorPoint)
     end
 
-    RunService.RenderStepped:Connect(moveViewmodel)
+    self.viewmodelRenderEvent = RunService.RenderStepped:Connect(moveViewmodel)
 end
 
 
@@ -1848,7 +1848,8 @@ function ViewmodelService:unequipWeapon()
     self.currentWeapon:Destroy()
     self.currentWeapon = nil
 
-    RunService:UnbindFromRenderStep(self.viewmodelBindRenderName)
+    self.viewmodelRenderEvent:Disconnect()
+    self.viewmodelRenderEvent = nil
 
     self.viewmodel:Destroy()
     self.viewmodel = nil
@@ -5308,6 +5309,28 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
+				</Item>
+				<Item class="CFrameValue" referent="RBXE49C56B1B7DC4F02A7DEA858FB574D25">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<string name="Name">Offset</string>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<CoordinateFrame name="Value">
+							<X>0</X>
+							<Y>-1</Y>
+							<Z>0</Z>
+							<R00>-4.37113883e-08</R00>
+							<R01>0</R01>
+							<R02>1</R02>
+							<R10>0</R10>
+							<R11>1</R11>
+							<R12>0</R12>
+							<R20>-1</R20>
+							<R21>0</R21>
+							<R22>-4.37113883e-08</R22>
+						</CoordinateFrame>
+					</Properties>
 				</Item>
 			</Item>
 		</Item>
