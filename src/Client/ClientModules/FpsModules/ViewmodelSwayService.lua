@@ -9,7 +9,7 @@ function ViewmodelSwayService.new()
     local self = {}
 
     self.viewmodel = nil
-    self.lastCameraCFrame = nil
+    self.lastAnchorPoint = nil
     self.swayOffset = nil
     self.multiplier = 3
 
@@ -28,8 +28,8 @@ function ViewmodelSwayService:sway(anchorPoint)
 
     local rotation = anchorPoint
     
-    if self.lastCameraCFrame then
-        rotation = rotation:ToObjectSpace(self.lastCameraCFrame)
+    if self.lastAnchorPoint then
+        rotation = rotation:ToObjectSpace(self.lastAnchorPoint)
     end
 
     local x, y, _ = rotation:ToOrientation()
@@ -37,9 +37,10 @@ function ViewmodelSwayService:sway(anchorPoint)
     local swayOffset = self.swayOffset or CFrame.Angles(0, 0, 0)
     swayOffset = swayOffset:Lerp(CFrame.Angles(math.sin(x) * self.multiplier, math.sin(y) * self.multiplier, 0), 0.1)
 
-    self.viewmodel:SetPrimaryPartCFrame(self.viewmodel.PrimaryPart.CFrame * swayOffset)
+    self.viewmodel.PrimaryPart.CFrame = anchorPoint * swayOffset
 
-    self.lastCameraCFrame = workspace.CurrentCamera.CFrame
+    self.lastAnchorPoint = anchorPoint
+    self.swayOffset = swayOffset
 end
 
 return ViewmodelSwayService

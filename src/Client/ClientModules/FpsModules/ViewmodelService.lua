@@ -60,7 +60,6 @@ function ViewmodelService:_runViewmodel()
     local function moveViewmodel()
         -- CFrame.new(Vector3.new(0, -1, 0)) * CFrame.Angles(0, math.pi/2, 0)
         local viewmodelSwayAnchorPoint = workspace.CurrentCamera.CoordinateFrame * CFrame.new(Vector3.new(0, -1, 0)) * CFrame.Angles(0, math.pi/2 , 0)
-        self.viewmodel.PrimaryPart.CFrame = viewmodelSwayAnchorPoint
         self.viewmodelSway:sway(viewmodelSwayAnchorPoint)
     end
 
