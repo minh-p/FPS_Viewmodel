@@ -57,12 +57,21 @@ function ViewmodelService:_runViewmodel()
 
     self.viewmodelSway:setupViewmodel(self.viewmodel)
 
+    local placings = self.currentWeapon:FindFirstChild("Placing")
+    if not placings then warn("Missing folder placings for weapon: " .. self.currentWeapon.Name)
+        return
+    end
+
+    local viewmodelOffset = placings:FindFirstChild("ViewmodelOffset")
+    if not viewmodelOffset then
+        warn("Missing ViewmodelOffset for weapon: " .. self.currentWeapon.Name)
+        return
+    end
+
     local function moveViewmodel()
-        -- CFrame.new(Vector3.new(0, -1, 0)) * CFrame.Angles(0, math.pi/2, 0)
-        local viewmodelSwayAnchorPoint = workspace.CurrentCamera.CoordinateFrame * self.currentWeapon.Placing.ViewmodelOffset.Value
-        -- This function right here will sway the weapon, as well as offsetting it.
-        
-        self.viewmodelSway:sway(viewmodelSwayAnchorPoint)
+        local viewmodelSwayAnchorPoint = workspace.CurrentCamera.CFrame * viewmodelOffset.Value
+        self.viewmodel.PrimaryPart.CFrame = viewmodelSwayAnchorPoint
+        self.viewmodelSway:sway()
     end
 
     self.viewmodelRenderEvent = RunService.RenderStepped:Connect(moveViewmodel)

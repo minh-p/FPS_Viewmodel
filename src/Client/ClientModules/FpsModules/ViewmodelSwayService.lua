@@ -11,10 +11,7 @@ function ViewmodelSwayService.new()
     local self = {}
 
     self.viewmodel = nil
-    self.lastAnchorPoint = nil
-    self.swayOffset = nil
     self.multiplier = 10
-    self.camera = workspace.CurrentCamera
 
     setmetatable(self, ViewmodelSwayService)
     return self
@@ -26,7 +23,7 @@ function ViewmodelSwayService:setupViewmodel(viewmodel)
 end
 
 
-function ViewmodelSwayService:sway(anchorPoint)
+function ViewmodelSwayService:sway()
     if not self.viewmodel then return end
 
     local mouseDelta = UserInputService:GetMouseDelta()
@@ -35,7 +32,7 @@ function ViewmodelSwayService:sway(anchorPoint)
 
     swayOffset = swayOffset:Lerp(CFrame.Angles(0, math.sin(mouseDelta.X/100) * self.multiplier, math.sin(mouseDelta.Y/100) * self.multiplier), 0.1)
 
-    self.viewmodel.PrimaryPart.CFrame = anchorPoint * swayOffset
+    self.viewmodel.PrimaryPart.CFrame *= swayOffset
     self.lastSwayOffset = swayOffset
 end
 
