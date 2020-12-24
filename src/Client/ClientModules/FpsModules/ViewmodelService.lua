@@ -36,7 +36,7 @@ function ViewmodelService.new(weaponStorer, viewmodelReference)
     self.viewmodel = nil
     self.currentWeapon = nil
     self.lastWeaponEquippedName = nil
-    self.viewmodelRenderEvent = nil
+    self.viewmodelBindRenderName = "MoveViewmodel"
 
     setmetatable(self, ViewmodelService)
     return self
@@ -57,12 +57,14 @@ function ViewmodelService:_runViewmodel()
 
     self.viewmodelSway:setupViewmodel(self.viewmodel)
 
-    self.viewmodelRenderEvent = RunService.RenderStepped:Connect(function()
+    local function moveViewmodel()
         -- CFrame.new(Vector3.new(0, -1, 0)) * CFrame.Angles(0, math.pi/2, 0)
         local viewmodelSwayAnchorPoint = workspace.CurrentCamera.CoordinateFrame * CFrame.new(Vector3.new(0, -1, 0)) * CFrame.Angles(0, math.pi/2 , 0)
         self.viewmodel:SetPrimaryPartCFrame(viewmodelSwayAnchorPoint)
         self.viewmodelSway:sway(viewmodelSwayAnchorPoint)
-    end)
+    end
+
+    RunService:BindToRenderStep(self.viewmodelBindRenderName, Enum.RenderPriority.Camera.Value - 1, moveViewmodel)
 end
 
 
@@ -105,8 +107,7 @@ function ViewmodelService:unequipWeapon()
     self.currentWeapon:Destroy()
     self.currentWeapon = nil
 
-    self.viewmodelRenderEvent:Disconnect()
-    self.viewmodelRenderEvent = nil
+    RunService:UnbindFromRenderStep(self.viewmodelBindRenderName)
 
     self.viewmodel:Destroy()
     self.viewmodel = nil
