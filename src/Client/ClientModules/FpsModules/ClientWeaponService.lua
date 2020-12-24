@@ -46,6 +46,7 @@ function ClientWeaponService:bindEquipViewmodelWeapons()
     
         local function handleEquipWeapon(_, inputState)
             if inputState == Enum.UserInputState.Begin then
+                print("equipped")
                 self.viewmodelService:equipWeapon(currentPlayerWeaponName)
             end
         end
