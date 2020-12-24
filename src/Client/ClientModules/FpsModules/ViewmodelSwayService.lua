@@ -26,22 +26,17 @@ function ViewmodelSwayService:setupViewmodel(viewmodel)
 end
 
 
-function ViewmodelSwayService:sway(anchorPoint, deltaTime)
+function ViewmodelSwayService:sway(anchorPoint)
     if not self.viewmodel then return end
 
     local mouseDelta = UserInputService:GetMouseDelta()
 
-    local swayOffset = CFrame.Angles(math.sin(mouseDelta.X/50) * deltaTime, 0, math.sin(mouseDelta.Y/50) * deltaTime)
-    local lerpToCFrame = anchorPoint * swayOffset
+    local swayOffset = self.lastSwayOffset or CFrame.Angles(0, 0, 0)
 
-    local newViewmodelCFrame = anchorPoint
+    swayOffset = swayOffset:Lerp(CFrame.Angles(0, math.sin(mouseDelta.X/100) * self.multiplier, math.sin(mouseDelta.Y/100) * self.multiplier), 0.1)
 
-    if self.lastAnchorPoint then
-        newViewmodelCFrame = self.lastAnchorPoint:Lerp(lerpToCFrame, 0.7)
-    end
-
-    self.viewmodel.PrimaryPart.CFrame = newViewmodelCFrame
-    self.lastAnchorPoint = newViewmodelCFrame
+    self.viewmodel.PrimaryPart.CFrame = anchorPoint * swayOffset
+    self.lastSwayOffset = swayOffset
 end
 
 return ViewmodelSwayService
