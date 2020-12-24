@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-3.4604125</X>
-					<Y>6.30859661</Y>
-					<Z>-4.98837233</Z>
-					<R00>0.793575048</R00>
+					<X>-7.85269165</X>
+					<Y>13.1120529</Y>
+					<Z>39.2765923</Z>
+					<R00>0.793574929</R00>
 					<R01>-0.21209754</R01>
-					<R02>0.570309937</R02>
-					<R10>1.49011612e-08</R10>
-					<R11>0.937281489</R11>
-					<R12>0.348573714</R12>
-					<R20>-0.608472526</R20>
-					<R21>-0.276619405</R21>
-					<R22>0.743803084</R22>
+					<R02>0.570310056</R02>
+					<R10>-0</R10>
+					<R11>0.93728143</R11>
+					<R12>0.348573655</R12>
+					<R20>-0.608472645</R20>
+					<R21>-0.276619315</R21>
+					<R22>0.743802965</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-4.60103226</X>
-					<Y>5.61144924</Y>
-					<Z>-6.47597837</Z>
+					<X>-8.99331188</X>
+					<Y>12.4149055</Y>
+					<Z>37.7889862</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -1797,12 +1797,12 @@ function ViewmodelService:_runViewmodel()
 
     self.viewmodelSway:setupViewmodel(self.viewmodel)
 
-    local function moveViewmodel()
+    local function moveViewmodel(deltaTime)
         -- CFrame.new(Vector3.new(0, -1, 0)) * CFrame.Angles(0, math.pi/2, 0)
         local viewmodelSwayAnchorPoint = workspace.CurrentCamera.CoordinateFrame * CFrame.new(Vector3.new(0, -1, 0)) * CFrame.Angles(0, math.pi/2 , 0)
         -- This function right here will sway the weapon, as well as offsetting it.
         
-        self.viewmodelSway:sway(viewmodelSwayAnchorPoint)
+        self.viewmodelSway:sway(viewmodelSwayAnchorPoint, deltaTime)
     end
 
     RunService.RenderStepped:Connect(moveViewmodel)
@@ -1917,18 +1917,18 @@ function ViewmodelSwayService:setupViewmodel(viewmodel)
 end
 
 
-function ViewmodelSwayService:sway(anchorPoint)
+function ViewmodelSwayService:sway(anchorPoint, deltaTime)
     if not self.viewmodel then return end
 
     local mouseDelta = UserInputService:GetMouseDelta()
 
-    local swayOffset = CFrame.Angles(math.sin(mouseDelta.X/50), 0, math.sin(mouseDelta.Y/50))
+    local swayOffset = CFrame.Angles(math.sin(mouseDelta.X/50) * deltaTime, 0, math.sin(mouseDelta.Y/50) * deltaTime)
     local lerpToCFrame = anchorPoint * swayOffset
 
     local newViewmodelCFrame = anchorPoint
 
     if self.lastAnchorPoint then
-        newViewmodelCFrame = self.lastAnchorPoint:Lerp(lerpToCFrame, 0.1)
+        newViewmodelCFrame = self.lastAnchorPoint:Lerp(lerpToCFrame, 0.7)
     end
 
     self.viewmodel.PrimaryPart.CFrame = newViewmodelCFrame
