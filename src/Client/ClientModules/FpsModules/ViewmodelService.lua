@@ -143,7 +143,7 @@ function ViewmodelService:equipWeapon(weaponName)
     self:unequipWeapon()
 
     if weaponName == self.lastWeaponEquippedName then
-        -- If we reach this point, we now know that our last weapon equipped is now considered as nothing.
+        -- If we reach this point, we now know that our last weapon equipped is now considered as nothing, so is its name.
         self.lastWeaponEquippedName = nil
         return    
     end
