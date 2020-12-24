@@ -51,7 +51,7 @@ end
 
 
 function ViewmodelService:_runViewmodel()
-    -- Attach viewmodel to player's HumanoidRootPart (By RenderStepped Event)
+    if not self.currentWeapon then return end
     if not self.viewmodel then return end
     self.viewmodel.Parent = workspace.CurrentCamera
 
@@ -59,7 +59,7 @@ function ViewmodelService:_runViewmodel()
 
     local function moveViewmodel()
         -- CFrame.new(Vector3.new(0, -1, 0)) * CFrame.Angles(0, math.pi/2, 0)
-        local viewmodelSwayAnchorPoint = workspace.CurrentCamera.CoordinateFrame * CFrame.new(Vector3.new(0, -1, 0)) * CFrame.Angles(0, math.pi/2 , 0)
+        local viewmodelSwayAnchorPoint = workspace.CurrentCamera.CoordinateFrame * self.currentWeapon.Placing.ViewmodelOffset.Value
         -- This function right here will sway the weapon, as well as offsetting it.
         
         self.viewmodelSway:sway(viewmodelSwayAnchorPoint)
@@ -77,6 +77,9 @@ function ViewmodelService:_equip(weapon)
     ]]
 
     if not weapon then return end
+
+    self:_getNewViewmodel()
+
     if not self.viewmodel then return end
 
     local viewmodelGunAttach = self.viewmodel.PrimaryPart.GunAttach
@@ -88,6 +91,8 @@ function ViewmodelService:_equip(weapon)
     viewmodelGunAttach.Part1 = clonedWeapon.GunAttach
 
     self.currentWeapon = clonedWeapon
+
+    self:_runViewmodel()
 
     local weaponAnimations = self.currentWeapon:FindFirstChild("Animations")
     if weaponAnimations then
@@ -134,8 +139,6 @@ function ViewmodelService:equipWeapon(weaponName)
         return    
     end
 
-    self:_getNewViewmodel()
-    self:_runViewmodel()
     self:_equip(weapon)
 end
 

@@ -1791,7 +1791,7 @@ end
 
 
 function ViewmodelService:_runViewmodel()
-    -- Attach viewmodel to player's HumanoidRootPart (By RenderStepped Event)
+    if not self.currentWeapon then return end
     if not self.viewmodel then return end
     self.viewmodel.Parent = workspace.CurrentCamera
 
@@ -1799,7 +1799,7 @@ function ViewmodelService:_runViewmodel()
 
     local function moveViewmodel()
         -- CFrame.new(Vector3.new(0, -1, 0)) * CFrame.Angles(0, math.pi/2, 0)
-        local viewmodelSwayAnchorPoint = workspace.CurrentCamera.CoordinateFrame * CFrame.new(Vector3.new(0, -1, 0)) * CFrame.Angles(0, math.pi/2 , 0)
+        local viewmodelSwayAnchorPoint = workspace.CurrentCamera.CoordinateFrame * self.currentWeapon.Placing.ViewmodelOffset.Value
         -- This function right here will sway the weapon, as well as offsetting it.
         
         self.viewmodelSway:sway(viewmodelSwayAnchorPoint)
@@ -1817,6 +1817,9 @@ function ViewmodelService:_equip(weapon)
     ]]
 
     if not weapon then return end
+
+    self:_getNewViewmodel()
+
     if not self.viewmodel then return end
 
     local viewmodelGunAttach = self.viewmodel.PrimaryPart.GunAttach
@@ -1828,6 +1831,8 @@ function ViewmodelService:_equip(weapon)
     viewmodelGunAttach.Part1 = clonedWeapon.GunAttach
 
     self.currentWeapon = clonedWeapon
+
+    self:_runViewmodel()
 
     local weaponAnimations = self.currentWeapon:FindFirstChild("Animations")
     if weaponAnimations then
@@ -1874,8 +1879,6 @@ function ViewmodelService:equipWeapon(weaponName)
         return    
     end
 
-    self:_getNewViewmodel()
-    self:_runViewmodel()
     self:_equip(weapon)
 end
 
@@ -4649,6 +4652,36 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 						</Properties>
 					</Item>
 				</Item>
+				<Item class="Folder" referent="RBXA33BA837EDAB41C3B3D520DE1EA484BB">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<string name="Name">Placing</string>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+					<Item class="CFrameValue" referent="RBX720F81B30E7E46E8BC40A038F7691CF3">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<string name="Name">ViewmodelOffset</string>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<CoordinateFrame name="Value">
+								<X>0</X>
+								<Y>-1</Y>
+								<Z>0</Z>
+								<R00>-4.37113883e-08</R00>
+								<R01>0</R01>
+								<R02>1</R02>
+								<R10>0</R10>
+								<R11>1</R11>
+								<R12>0</R12>
+								<R20>-1</R20>
+								<R21>0</R21>
+								<R22>-4.37113883e-08</R22>
+							</CoordinateFrame>
+						</Properties>
+					</Item>
+				</Item>
 			</Item>
 			<Item class="Model" referent="RBXFD51C3BC15E14F4598F4FA331B259FB0">
 				<Properties>
@@ -5310,27 +5343,35 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 						</Properties>
 					</Item>
 				</Item>
-				<Item class="CFrameValue" referent="RBXE49C56B1B7DC4F02A7DEA858FB574D25">
+				<Item class="Folder" referent="RBX92AF1DF98C664FF6A300CD6800149CD6">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
-						<string name="Name">Offset</string>
+						<string name="Name">Placing</string>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
-						<CoordinateFrame name="Value">
-							<X>0</X>
-							<Y>-1</Y>
-							<Z>0</Z>
-							<R00>-4.37113883e-08</R00>
-							<R01>0</R01>
-							<R02>1</R02>
-							<R10>0</R10>
-							<R11>1</R11>
-							<R12>0</R12>
-							<R20>-1</R20>
-							<R21>0</R21>
-							<R22>-4.37113883e-08</R22>
-						</CoordinateFrame>
 					</Properties>
+					<Item class="CFrameValue" referent="RBXE49C56B1B7DC4F02A7DEA858FB574D25">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<string name="Name">ViewmodelOffset</string>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<CoordinateFrame name="Value">
+								<X>0</X>
+								<Y>-1</Y>
+								<Z>0</Z>
+								<R00>-4.37113883e-08</R00>
+								<R01>0</R01>
+								<R02>1</R02>
+								<R10>0</R10>
+								<R11>1</R11>
+								<R12>0</R12>
+								<R20>-1</R20>
+								<R21>0</R21>
+								<R22>-4.37113883e-08</R22>
+							</CoordinateFrame>
+						</Properties>
+					</Item>
 				</Item>
 			</Item>
 		</Item>
