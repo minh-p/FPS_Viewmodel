@@ -11,7 +11,7 @@ function ViewmodelSwayService.new()
     self.viewmodel = nil
     self.lastAnchorPoint = nil
     self.swayOffset = nil
-    self.multiplier = 3
+    self.multiplier = 10
 
     setmetatable(self, ViewmodelSwayService)
     return self
@@ -31,8 +31,6 @@ function ViewmodelSwayService:sway(anchorPoint)
     local swayOffset = self.swayOffset or CFrame.Angles(0, 0, 0)
 
     if self.lastAnchorPoint then
-        local newAnchorPointPosition = toAnchorPoint:ToObjectSpace(self.lastAnchorPoint).Position
-
         -- Get the sway offset at rotation value which will be later multiplied to.
         local newAnchorPointRotation = toAnchorPoint:ToObjectSpace(self.lastAnchorPoint)
         local rX, rY = newAnchorPointRotation:ToOrientation()
