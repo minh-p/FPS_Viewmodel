@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-19.7159176</X>
-					<Y>2.84264755</Y>
-					<Z>-14.0249643</Z>
-					<R00>0.37848416</R00>
-					<R01>0.408952177</R01>
-					<R02>-0.830366135</R02>
-					<R10>-0</R10>
-					<R11>0.897103667</R11>
-					<R12>0.441820145</R12>
-					<R20>0.9256078</R20>
-					<R21>-0.167221934</R21>
-					<R22>0.339539528</R22>
+					<X>-3.4604125</X>
+					<Y>6.30859661</Y>
+					<Z>-4.98837233</Z>
+					<R00>0.793575048</R00>
+					<R01>-0.21209754</R01>
+					<R02>0.570309937</R02>
+					<R10>1.49011612e-08</R10>
+					<R11>0.937281489</R11>
+					<R12>0.348573714</R12>
+					<R20>-0.608472526</R20>
+					<R21>-0.276619405</R21>
+					<R22>0.743803084</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-18.0551853</X>
-					<Y>1.95900726</Y>
-					<Z>-14.7040434</Z>
+					<X>-4.60103226</X>
+					<Y>5.61144924</Y>
+					<Z>-6.47597837</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -1802,6 +1802,7 @@ function ViewmodelService:_runViewmodel()
         -- CFrame.new(Vector3.new(0, -1, 0)) * CFrame.Angles(0, math.pi/2, 0)
         local viewmodelSwayAnchorPoint = workspace.CurrentCamera.CoordinateFrame * CFrame.new(Vector3.new(0, -1, 0)) * CFrame.Angles(0, math.pi/2 , 0)
         -- This function right here will sway the weapon, as well as offsetting it.
+        
         self.viewmodelSway:sway(viewmodelSwayAnchorPoint)
     end
 
@@ -1917,18 +1918,22 @@ end
 function ViewmodelSwayService:sway(anchorPoint)
     if not self.viewmodel then return end
 
-    local rotation = anchorPoint
-    
-    if self.lastAnchorPoint then
-        rotation = rotation:ToObjectSpace(self.lastAnchorPoint)
-    end
-
-    local x, y, _ = rotation:ToOrientation()
+    local toAnchorPoint = anchorPoint
 
     local swayOffset = self.swayOffset or CFrame.Angles(0, 0, 0)
-    swayOffset = swayOffset:Lerp(CFrame.Angles(math.sin(x) * self.multiplier, math.sin(y) * self.multiplier, 0), 0.1)
 
-    self.viewmodel.PrimaryPart.CFrame = anchorPoint * swayOffset
+    if self.lastAnchorPoint then
+        local newAnchorPointPosition = toAnchorPoint:ToObjectSpace(self.lastAnchorPoint).Position
+
+        -- Get the sway offset at rotation value which will be later multiplied to.
+        local newAnchorPointRotation = toAnchorPoint:ToObjectSpace(self.lastAnchorPoint)
+        local rX, rY = newAnchorPointRotation:ToOrientation()
+        swayOffset = swayOffset:Lerp(CFrame.Angles(math.sin(rX) * self.multiplier, math.sin(rY) * self.multiplier, 0), 0.1)
+
+        toAnchorPoint = self.lastAnchorPoint:Lerp(CFrame.new(anchorPoint.Position) * swayOffset, 0.1)
+    end
+
+    self.viewmodel.PrimaryPart.CFrame = toAnchorPoint
 
     self.lastAnchorPoint = anchorPoint
     self.swayOffset = swayOffset

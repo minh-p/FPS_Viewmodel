@@ -26,18 +26,22 @@ end
 function ViewmodelSwayService:sway(anchorPoint)
     if not self.viewmodel then return end
 
-    local rotation = anchorPoint
-    
-    if self.lastAnchorPoint then
-        rotation = rotation:ToObjectSpace(self.lastAnchorPoint)
-    end
-
-    local x, y, _ = rotation:ToOrientation()
+    local toAnchorPoint = anchorPoint
 
     local swayOffset = self.swayOffset or CFrame.Angles(0, 0, 0)
-    swayOffset = swayOffset:Lerp(CFrame.Angles(math.sin(x) * self.multiplier, math.sin(y) * self.multiplier, 0), 0.1)
 
-    self.viewmodel.PrimaryPart.CFrame = anchorPoint * swayOffset
+    if self.lastAnchorPoint then
+        local newAnchorPointPosition = toAnchorPoint:ToObjectSpace(self.lastAnchorPoint).Position
+
+        -- Get the sway offset at rotation value which will be later multiplied to.
+        local newAnchorPointRotation = toAnchorPoint:ToObjectSpace(self.lastAnchorPoint)
+        local rX, rY = newAnchorPointRotation:ToOrientation()
+        swayOffset = swayOffset:Lerp(CFrame.Angles(math.sin(rX) * self.multiplier, math.sin(rY) * self.multiplier, 0), 0.1)
+
+        toAnchorPoint = self.lastAnchorPoint:Lerp(CFrame.new(anchorPoint.Position) * swayOffset, 0.1)
+    end
+
+    self.viewmodel.PrimaryPart.CFrame = toAnchorPoint
 
     self.lastAnchorPoint = anchorPoint
     self.swayOffset = swayOffset
