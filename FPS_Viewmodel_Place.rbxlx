@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-22.4576283</X>
-					<Y>3.84540677</Y>
-					<Z>-5.56349182</Z>
-					<R00>0.36942032</R00>
-					<R01>0.281136155</R01>
-					<R02>-0.885715067</R02>
+					<X>-32.4729309</X>
+					<Y>6.57558537</Y>
+					<Z>24.8219299</Z>
+					<R00>0.927188754</R00>
+					<R01>-0.0838200152</R01>
+					<R02>0.365096211</R02>
 					<R10>-0</R10>
-					<R11>0.953137815</R11>
-					<R12>0.302536845</R12>
-					<R20>0.929262519</R20>
-					<R21>-0.111763261</R21>
-					<R22>0.352108419</R22>
+					<R11>0.974643826</R11>
+					<R12>0.223762006</R12>
+					<R20>-0.37459451</R20>
+					<R21>-0.207469612</R21>
+					<R22>0.903678775</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-20.6861954</X>
-					<Y>3.24033213</Y>
-					<Z>-6.26770973</Z>
+					<X>-33.203125</X>
+					<Y>6.12806034</Y>
+					<Z>23.0145683</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -1658,19 +1658,19 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="Folder" referent="RBXC83E1F2DF87F4F208CE7AA6D95BE94E5">
+				<Item class="Folder" referent="RBX2FD66EBC6A8E4087941D82F10D09FE32">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<string name="Name">FpsModules</string>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
-					<Item class="ModuleScript" referent="RBX10B7E2D573E24B0C8F694BBD07C5B357">
+					<Item class="ModuleScript" referent="RBX826C413707C145C58F6660964CB4ED5B">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<Content name="LinkedSource"><null></null></Content>
 							<string name="Name">ClientWeaponService</string>
-							<string name="ScriptGuid">{C1BDCA88-37A0-4945-AFCB-3AFAEAF68612}</string>
+							<string name="ScriptGuid">{EC9C9E40-7F0D-4308-ABB5-A7DA5C79AB81}</string>
 							<ProtectedString name="Source"><![CDATA[-- Client Framework for Fps viewmodel
 -- 22/9/2020
 -- Minhnormal
@@ -1732,12 +1732,12 @@ return ClientWeaponService]]></ProtectedString>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
-					<Item class="ModuleScript" referent="RBX26B16A9B234C4DFF987C667604B05E17">
+					<Item class="ModuleScript" referent="RBX3F8767D7708F428E998F1CFB3C7C6480">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<Content name="LinkedSource"><null></null></Content>
 							<string name="Name">ViewmodelService</string>
-							<string name="ScriptGuid">{A65AE6E6-DCAB-4D42-93E4-CD3626671A14}</string>
+							<string name="ScriptGuid">{00566AC3-9E8A-4672-A693-5D9B0228293A}</string>
 							<ProtectedString name="Source"><![CDATA[-- Do Weapon functionallities that relates to a viewmodel. (Needs input to work)
 -- 12/19/2020
 -- Minhnormal
@@ -1746,6 +1746,9 @@ return ClientWeaponService]]></ProtectedString>
     How to use, currently of 12/20/2020
     The gun need to primary part as an object named "GunAttach", for this to work.
 ]]
+
+local PlayerScripts = game.Players.LocalPlayer.PlayerScripts
+local clientModules = PlayerScripts.ClientModules
 
 local RunService = game:GetService("RunService")
 
@@ -1765,6 +1768,8 @@ function ViewmodelService.new(weaponStorer, viewmodelReference)
     if not viewmodelReference:IsA("Model") then return end
 
     local self = {}
+
+    self.viewmodelSway = require(clientModules.FpsModules.ViewmodelSwayService).new()
 
     self.weaponStorer = weaponStorer
     self.viewmodelReference = viewmodelReference
@@ -1786,15 +1791,30 @@ end
 
 
 function ViewmodelService:_runViewmodel()
-    -- Attach viewmodel to player's HumanoidRootPart (By RenderStepped Event)
+    if not self.currentWeapon then return end
     if not self.viewmodel then return end
     self.viewmodel.Parent = workspace.CurrentCamera
 
-    self.viewmodelRenderEvent = RunService.RenderStepped:Connect(function()
-        -- CFrame.new(Vector3.new(0, -1, 0)) * CFrame.Angles(0, math.pi/2, 0)
-        local updatedViewmodelCFrame = workspace.CurrentCamera.CoordinateFrame * CFrame.new(Vector3.new(0, -1, 0)) * CFrame.Angles(0, math.pi/2 + math.rad(math.sin(tick()) * 2) , 0)
-        self.viewmodel:SetPrimaryPartCFrame(updatedViewmodelCFrame)
-    end)
+    self.viewmodelSway:setupViewmodel(self.viewmodel)
+
+    local placings = self.currentWeapon:FindFirstChild("Placing")
+    if not placings then warn("Missing folder placings for weapon: " .. self.currentWeapon.Name)
+        return
+    end
+
+    local viewmodelOffset = placings:FindFirstChild("ViewmodelOffset")
+    if not viewmodelOffset then
+        warn("Missing ViewmodelOffset for weapon: " .. self.currentWeapon.Name)
+        return
+    end
+
+    local function moveViewmodel()
+        local viewmodelSwayAnchorPoint = workspace.CurrentCamera.CFrame * viewmodelOffset.Value
+        self.viewmodel.PrimaryPart.CFrame = viewmodelSwayAnchorPoint
+        self.viewmodelSway:sway()
+    end
+
+    self.viewmodelRenderEvent = RunService.RenderStepped:Connect(moveViewmodel)
 end
 
 
@@ -1806,6 +1826,9 @@ function ViewmodelService:_equip(weapon)
     ]]
 
     if not weapon then return end
+
+    self:_getNewViewmodel()
+
     if not self.viewmodel then return end
 
     local viewmodelGunAttach = self.viewmodel.PrimaryPart.GunAttach
@@ -1817,6 +1840,8 @@ function ViewmodelService:_equip(weapon)
     viewmodelGunAttach.Part1 = clonedWeapon.GunAttach
 
     self.currentWeapon = clonedWeapon
+
+    self:_runViewmodel()
 
     local weaponAnimations = self.currentWeapon:FindFirstChild("Animations")
     if weaponAnimations then
@@ -1863,8 +1888,6 @@ function ViewmodelService:equipWeapon(weaponName)
         return    
     end
 
-    self:_getNewViewmodel()
-    self:_runViewmodel()
     self:_equip(weapon)
 end
 
@@ -1873,15 +1896,64 @@ return ViewmodelService]]></ProtectedString>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
+					<Item class="ModuleScript" referent="RBXE88AE2EC3D65496C8C694B1127039DFC">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<Content name="LinkedSource"><null></null></Content>
+							<string name="Name">ViewmodelSwayService</string>
+							<string name="ScriptGuid">{4268551A-1828-4B14-93D8-A3B0D4BA8B44}</string>
+							<ProtectedString name="Source"><![CDATA[-- Makes FPS ViewModel sways when it is moved from left to right.
+-- 12/23/2020
+-- Minhnormal
+
+local UserInputService = game:GetService("UserInputService")
+
+local ViewmodelSwayService = {}
+ViewmodelSwayService.__index = ViewmodelSwayService
+
+function ViewmodelSwayService.new()
+    local self = {}
+
+    self.viewmodel = nil
+    self.multiplier = 10
+
+    setmetatable(self, ViewmodelSwayService)
+    return self
+end
+
+
+function ViewmodelSwayService:setupViewmodel(viewmodel)
+    self.viewmodel = viewmodel
+end
+
+
+function ViewmodelSwayService:sway()
+    if not self.viewmodel then return end
+
+    local mouseDelta = UserInputService:GetMouseDelta()
+
+    local swayOffset = self.lastSwayOffset or CFrame.Angles(0, 0, 0)
+
+    swayOffset = swayOffset:Lerp(CFrame.Angles(0, math.sin(mouseDelta.X/100) * self.multiplier, math.sin(mouseDelta.Y/100) * self.multiplier), 0.1)
+
+    self.viewmodel.PrimaryPart.CFrame *= swayOffset
+    self.lastSwayOffset = swayOffset
+end
+
+return ViewmodelSwayService]]></ProtectedString>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+						</Properties>
+					</Item>
 				</Item>
 			</Item>
-			<Item class="LocalScript" referent="RBX9681E29791394FC8A9A40781D2C7760C">
+			<Item class="LocalScript" referent="RBXF87292510559419D95B9E0DC31EBF0F2">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<bool name="Disabled">false</bool>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">ClientWeaponViewmodel</string>
-					<string name="ScriptGuid">{F16A04A0-926E-4242-B6B4-20B299EFE955}</string>
+					<string name="ScriptGuid">{F6601D5E-F1D5-4B6E-B857-ED0C99C8A6C6}</string>
 					<ProtectedString name="Source"><![CDATA[local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local clientModules = game.Players.LocalPlayer.PlayerScripts.ClientModules
@@ -3340,7 +3412,7 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-			<Item class="Model" referent="RBXA77CD776FE0B4126948D898E8FEB06CE">
+			<Item class="Model" referent="RBXCA73C0AB7E074B26B352C8A8E6D5D1C9">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<token name="LevelOfDetail">0</token>
@@ -3379,11 +3451,11 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 						<Z>0</Z>
 					</Vector3>
 					<string name="Name">Viewmodel</string>
-					<Ref name="PrimaryPart">RBX32539A1806E642ABAD19D83E34F765B0</Ref>
+					<Ref name="PrimaryPart">RBXA1C3837133174AB59873628532E4AC42</Ref>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="Part" referent="RBXCB9262445B7C4F5D9F593A79E951419B">
+				<Item class="Part" referent="RBX27B11E20148440B2A14E08AE456161D6">
 					<Properties>
 						<bool name="Anchored">false</bool>
 						<BinaryString name="AttributesSerialize"></BinaryString>
@@ -3460,7 +3532,7 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 						</Vector3>
 					</Properties>
 				</Item>
-				<Item class="Part" referent="RBX32539A1806E642ABAD19D83E34F765B0">
+				<Item class="Part" referent="RBXA1C3837133174AB59873628532E4AC42">
 					<Properties>
 						<bool name="Anchored">false</bool>
 						<BinaryString name="AttributesSerialize"></BinaryString>
@@ -3536,7 +3608,7 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 							<Z>2.04998875</Z>
 						</Vector3>
 					</Properties>
-					<Item class="Motor6D" referent="RBX09F3FF1AC63448E3ABE945289E6B1110">
+					<Item class="Motor6D" referent="RBX93F34E1A463C4CC2AE8F9588A3E960B9">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<CoordinateFrame name="C0">
@@ -3571,13 +3643,13 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 							<bool name="Enabled">true</bool>
 							<float name="MaxVelocity">0</float>
 							<string name="Name">LeftArm</string>
-							<Ref name="Part0">RBX32539A1806E642ABAD19D83E34F765B0</Ref>
-							<Ref name="Part1">RBXCB9262445B7C4F5D9F593A79E951419B</Ref>
+							<Ref name="Part0">RBXA1C3837133174AB59873628532E4AC42</Ref>
+							<Ref name="Part1">RBX27B11E20148440B2A14E08AE456161D6</Ref>
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
-					<Item class="Motor6D" referent="RBXDBC032D03F8743CCAA33CE023E9A4A11">
+					<Item class="Motor6D" referent="RBXC384F0FEF66F450B8DB02DD22DEE86B7">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<CoordinateFrame name="C0">
@@ -3612,14 +3684,55 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 							<bool name="Enabled">true</bool>
 							<float name="MaxVelocity">0</float>
 							<string name="Name">RightArm</string>
-							<Ref name="Part0">RBX32539A1806E642ABAD19D83E34F765B0</Ref>
-							<Ref name="Part1">RBX1316E868C4F749FF87464E1AE0B4536D</Ref>
+							<Ref name="Part0">RBXA1C3837133174AB59873628532E4AC42</Ref>
+							<Ref name="Part1">RBX006E5859DD4146D9BA59905EEC92B7AB</Ref>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+						</Properties>
+					</Item>
+					<Item class="Motor6D" referent="RBX8F7B6C245186460DBBC71AA66496B636">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<CoordinateFrame name="C0">
+								<X>-0.21710968</X>
+								<Y>0.0690245926</Y>
+								<Z>-0.0126943588</Z>
+								<R00>0</R00>
+								<R01>0</R01>
+								<R02>-1</R02>
+								<R10>0</R10>
+								<R11>1</R11>
+								<R12>0</R12>
+								<R20>1</R20>
+								<R21>0</R21>
+								<R22>0</R22>
+							</CoordinateFrame>
+							<CoordinateFrame name="C1">
+								<X>0</X>
+								<Y>0</Y>
+								<Z>0</Z>
+								<R00>1</R00>
+								<R01>0</R01>
+								<R02>0</R02>
+								<R10>0</R10>
+								<R11>1</R11>
+								<R12>0</R12>
+								<R20>0</R20>
+								<R21>0</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<float name="DesiredAngle">0</float>
+							<bool name="Enabled">true</bool>
+							<float name="MaxVelocity">0</float>
+							<string name="Name">GunAttach</string>
+							<Ref name="Part0">RBXA1C3837133174AB59873628532E4AC42</Ref>
+							<Ref name="Part1">RBXA1C3837133174AB59873628532E4AC42</Ref>
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
 				</Item>
-				<Item class="Part" referent="RBX1316E868C4F749FF87464E1AE0B4536D">
+				<Item class="Part" referent="RBX006E5859DD4146D9BA59905EEC92B7AB">
 					<Properties>
 						<bool name="Anchored">false</bool>
 						<BinaryString name="AttributesSerialize"></BinaryString>
@@ -3696,14 +3809,14 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 						</Vector3>
 					</Properties>
 				</Item>
-				<Item class="AnimationController" referent="RBX49E10172B0394DAB949FE54E7534CEC8">
+				<Item class="AnimationController" referent="RBX2232F497464246F584557E4751F72E0D">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<string name="Name">AnimationController</string>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
-					<Item class="Animator" referent="RBX0C32221E3E09469BACD4E77BD5082670">
+					<Item class="Animator" referent="RBX1EE8A11BB7484A98A4D4C5C50A6098C6">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<string name="Name">Animator</string>
@@ -3712,7 +3825,7 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 						</Properties>
 					</Item>
 				</Item>
-				<Item class="Model" referent="RBXB91686A8115649769EC15AF08A78D756">
+				<Item class="Model" referent="RBXEC981CB7AD3B4BE9810196A8A4B7330F">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<token name="LevelOfDetail">0</token>
@@ -3755,7 +3868,7 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
-					<Item class="KeyframeSequence" referent="RBXE4167A8C7F934923B9BDFC1D70808C8B">
+					<Item class="KeyframeSequence" referent="RBX5E2DE683A0D04B359D30C6029B249966">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<float name="AuthoredHipHeight">2</float>
@@ -3765,7 +3878,7 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags">MTYwODU4NDYwNA==</BinaryString>
 						</Properties>
-						<Item class="Keyframe" referent="RBXAA898B1DA8F246A9840BA46D7A2474FE">
+						<Item class="Keyframe" referent="RBX1053D78F88604D04A29170B58546F95C">
 							<Properties>
 								<BinaryString name="AttributesSerialize"></BinaryString>
 								<string name="Name">Keyframe</string>
@@ -3773,7 +3886,7 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 								<BinaryString name="Tags"></BinaryString>
 								<float name="Time">0.666666687</float>
 							</Properties>
-							<Item class="Pose" referent="RBX89BB10346C99469ABBDDC76B768F253A">
+							<Item class="Pose" referent="RBXA3F6A9D64C2541B2855EB23E160AF8E4">
 								<Properties>
 									<BinaryString name="AttributesSerialize"></BinaryString>
 									<CoordinateFrame name="CFrame">
@@ -3797,7 +3910,7 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 									<BinaryString name="Tags"></BinaryString>
 									<float name="Weight">0</float>
 								</Properties>
-								<Item class="Pose" referent="RBX478090E1984B417E9A793FA94A2CCB18">
+								<Item class="Pose" referent="RBX1D207A59355C4452A8BEE638C2FC52AA">
 									<Properties>
 										<BinaryString name="AttributesSerialize"></BinaryString>
 										<CoordinateFrame name="CFrame">
@@ -3822,7 +3935,7 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 										<float name="Weight">1</float>
 									</Properties>
 								</Item>
-								<Item class="Pose" referent="RBX282C0D84DDFD4AE386E9D2FF474A2E58">
+								<Item class="Pose" referent="RBX93E1643B9A574921B2F0F9FDD67EBC8C">
 									<Properties>
 										<BinaryString name="AttributesSerialize"></BinaryString>
 										<CoordinateFrame name="CFrame">
@@ -3847,7 +3960,7 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 										<float name="Weight">1</float>
 									</Properties>
 								</Item>
-								<Item class="Pose" referent="RBXA24A42664E224E508B0447C2AE4A01AD">
+								<Item class="Pose" referent="RBXCA38DB44ABC0412891DF29C0B011BDCD">
 									<Properties>
 										<BinaryString name="AttributesSerialize"></BinaryString>
 										<CoordinateFrame name="CFrame">
@@ -4545,6 +4658,36 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 						</Properties>
 					</Item>
 				</Item>
+				<Item class="Folder" referent="RBXA33BA837EDAB41C3B3D520DE1EA484BB">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<string name="Name">Placing</string>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+					<Item class="CFrameValue" referent="RBX720F81B30E7E46E8BC40A038F7691CF3">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<string name="Name">ViewmodelOffset</string>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<CoordinateFrame name="Value">
+								<X>0</X>
+								<Y>-1</Y>
+								<Z>0</Z>
+								<R00>-4.37113883e-08</R00>
+								<R01>0</R01>
+								<R02>1</R02>
+								<R10>0</R10>
+								<R11>1</R11>
+								<R12>0</R12>
+								<R20>-1</R20>
+								<R21>0</R21>
+								<R22>-4.37113883e-08</R22>
+							</CoordinateFrame>
+						</Properties>
+					</Item>
+				</Item>
 			</Item>
 			<Item class="Model" referent="RBXFD51C3BC15E14F4598F4FA331B259FB0">
 				<Properties>
@@ -5203,6 +5346,36 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 							<string name="Name">Idle</string>
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
+						</Properties>
+					</Item>
+				</Item>
+				<Item class="Folder" referent="RBX92AF1DF98C664FF6A300CD6800149CD6">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<string name="Name">Placing</string>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+					<Item class="CFrameValue" referent="RBXE49C56B1B7DC4F02A7DEA858FB574D25">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<string name="Name">ViewmodelOffset</string>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<CoordinateFrame name="Value">
+								<X>0</X>
+								<Y>-1</Y>
+								<Z>0</Z>
+								<R00>-4.37113883e-08</R00>
+								<R01>0</R01>
+								<R02>1</R02>
+								<R10>0</R10>
+								<R11>1</R11>
+								<R12>0</R12>
+								<R20>-1</R20>
+								<R21>0</R21>
+								<R22>-4.37113883e-08</R22>
+							</CoordinateFrame>
 						</Properties>
 					</Item>
 				</Item>

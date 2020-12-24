@@ -7,6 +7,9 @@
     The gun need to primary part as an object named "GunAttach", for this to work.
 ]]
 
+local PlayerScripts = game.Players.LocalPlayer.PlayerScripts
+local clientModules = PlayerScripts.ClientModules
+
 local RunService = game:GetService("RunService")
 
 local ViewmodelService = {}
@@ -25,6 +28,8 @@ function ViewmodelService.new(weaponStorer, viewmodelReference)
     if not viewmodelReference:IsA("Model") then return end
 
     local self = {}
+
+    self.viewmodelSway = require(clientModules.FpsModules.ViewmodelSwayService).new()
 
     self.weaponStorer = weaponStorer
     self.viewmodelReference = viewmodelReference
@@ -46,15 +51,30 @@ end
 
 
 function ViewmodelService:_runViewmodel()
-    -- Attach viewmodel to player's HumanoidRootPart (By RenderStepped Event)
+    if not self.currentWeapon then return end
     if not self.viewmodel then return end
     self.viewmodel.Parent = workspace.CurrentCamera
 
-    self.viewmodelRenderEvent = RunService.RenderStepped:Connect(function()
-        -- CFrame.new(Vector3.new(0, -1, 0)) * CFrame.Angles(0, math.pi/2, 0)
-        local updatedViewmodelCFrame = workspace.CurrentCamera.CoordinateFrame * CFrame.new(Vector3.new(0, -1, 0)) * CFrame.Angles(0, math.pi/2 + math.rad(math.sin(tick()) * 2) , 0)
-        self.viewmodel:SetPrimaryPartCFrame(updatedViewmodelCFrame)
-    end)
+    self.viewmodelSway:setupViewmodel(self.viewmodel)
+
+    local placings = self.currentWeapon:FindFirstChild("Placing")
+    if not placings then warn("Missing folder placings for weapon: " .. self.currentWeapon.Name)
+        return
+    end
+
+    local viewmodelOffset = placings:FindFirstChild("ViewmodelOffset")
+    if not viewmodelOffset then
+        warn("Missing ViewmodelOffset for weapon: " .. self.currentWeapon.Name)
+        return
+    end
+
+    local function moveViewmodel()
+        local viewmodelSwayAnchorPoint = workspace.CurrentCamera.CFrame * viewmodelOffset.Value
+        self.viewmodel.PrimaryPart.CFrame = viewmodelSwayAnchorPoint
+        self.viewmodelSway:sway()
+    end
+
+    self.viewmodelRenderEvent = RunService.RenderStepped:Connect(moveViewmodel)
 end
 
 
@@ -66,6 +86,9 @@ function ViewmodelService:_equip(weapon)
     ]]
 
     if not weapon then return end
+
+    self:_getNewViewmodel()
+
     if not self.viewmodel then return end
 
     local viewmodelGunAttach = self.viewmodel.PrimaryPart.GunAttach
@@ -77,6 +100,8 @@ function ViewmodelService:_equip(weapon)
     viewmodelGunAttach.Part1 = clonedWeapon.GunAttach
 
     self.currentWeapon = clonedWeapon
+
+    self:_runViewmodel()
 
     local weaponAnimations = self.currentWeapon:FindFirstChild("Animations")
     if weaponAnimations then
@@ -118,13 +143,11 @@ function ViewmodelService:equipWeapon(weaponName)
     self:unequipWeapon()
 
     if weaponName == self.lastWeaponEquippedName then
-        -- If we reach this point, we now know that our last weapon equipped is now considered as nothing.
+        -- If we reach this point, we now know that our last weapon equipped is now considered as nothing, so is its name.
         self.lastWeaponEquippedName = nil
         return    
     end
 
-    self:_getNewViewmodel()
-    self:_runViewmodel()
     self:_equip(weapon)
 end
 
