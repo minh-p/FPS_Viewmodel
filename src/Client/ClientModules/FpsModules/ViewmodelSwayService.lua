@@ -2,8 +2,6 @@
 -- 12/23/2020
 -- Minhnormal
 
-local UserInputService = game:GetService("UserInputService")
-
 local ViewmodelSwayService = {}
 ViewmodelSwayService.__index = ViewmodelSwayService
 
@@ -11,6 +9,9 @@ function ViewmodelSwayService.new()
     local self = {}
 
     self.viewmodel = nil
+    self.lastCameraCFrame = nil
+    self.swayOffset = nil
+    self.multiplier = 3
 
     setmetatable(self, ViewmodelSwayService)
     return self
@@ -24,13 +25,21 @@ end
 
 function ViewmodelSwayService:sway(anchorPoint)
     if not self.viewmodel then return end
-    local viewmodelAnchorPoint = anchorPoint or workspace.CurrentCamera.CoordinateFrame
 
-    local mouseDelta = UserInputService:GetMouseDelta()
-    local mouseDeltaX = mouseDelta.X
-    local mouseDeltaY = mouseDelta.Y
+    local rotation = anchorPoint
+    
+    if self.lastCameraCFrame then
+        rotation = rotation:ToObjectSpace(self.lastCameraCFrame)
+    end
 
-    self.viewmodel.PrimaryPart.CFrame = viewmodelAnchorPoint * CFrame.Angles(mouseDeltaX / 200, mouseDeltaY / 200, 0)
+    local x, y, _ = rotation:ToOrientation()
+
+    local swayOffset = self.swayOffset or CFrame.Angles(0, 0, 0)
+    swayOffset = swayOffset:Lerp(CFrame.Angles(math.sin(x) * self.multiplier, math.sin(y) * self.multiplier, 0), 0.1)
+
+    self.viewmodel:SetPrimaryPartCFrame(self.viewmodel.PrimaryPart.CFrame * swayOffset)
+
+    self.lastCameraCFrame = workspace.CurrentCamera.CFrame
 end
 
 return ViewmodelSwayService
