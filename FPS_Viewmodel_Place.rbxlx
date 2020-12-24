@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-39.8297997</X>
-					<Y>11.5656137</Y>
-					<Z>-0.736464262</Z>
-					<R00>0.43271029</R00>
-					<R01>0.36539495</R01>
-					<R02>-0.824165344</R02>
-					<R10>-1.49011612e-08</R10>
-					<R11>0.914182127</R11>
-					<R12>0.405303955</R12>
-					<R20>0.901533127</R20>
-					<R21>-0.175379172</R21>
-					<R22>0.395575941</R22>
+					<X>-19.7159176</X>
+					<Y>2.84264755</Y>
+					<Z>-14.0249643</Z>
+					<R00>0.37848416</R00>
+					<R01>0.408952177</R01>
+					<R02>-0.830366135</R02>
+					<R10>-0</R10>
+					<R11>0.897103667</R11>
+					<R12>0.441820145</R12>
+					<R20>0.9256078</R20>
+					<R21>-0.167221934</R21>
+					<R22>0.339539528</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-38.181469</X>
-					<Y>10.7550058</Y>
-					<Z>-1.52761614</Z>
+					<X>-18.0551853</X>
+					<Y>1.95900726</Y>
+					<Z>-14.7040434</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -1800,6 +1800,7 @@ function ViewmodelService:_runViewmodel()
     local function moveViewmodel()
         -- CFrame.new(Vector3.new(0, -1, 0)) * CFrame.Angles(0, math.pi/2, 0)
         local viewmodelSwayAnchorPoint = workspace.CurrentCamera.CoordinateFrame * CFrame.new(Vector3.new(0, -1, 0)) * CFrame.Angles(0, math.pi/2 , 0)
+        -- This function right here will sway the weapon, as well as offsetting it.
         self.viewmodelSway:sway(viewmodelSwayAnchorPoint)
     end
 
