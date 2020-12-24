@@ -65,7 +65,7 @@ function ViewmodelService:_runViewmodel()
         self.viewmodelSway:sway(viewmodelSwayAnchorPoint)
     end
 
-    RunService:BindToRenderStep(self.viewmodelBindRenderName, Enum.RenderPriority.Camera.Value - 1, moveViewmodel)
+    RunService.RenderStepped:Connect(moveViewmodel)
 end
 
 
