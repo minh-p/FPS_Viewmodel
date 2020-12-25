@@ -3,6 +3,7 @@
 -- Minhnormal
 
 local ContextActionService = game:GetService("ContextActionService")
+local TweenService = game:GetService("TweenService")
 
 local ViewmodelAimService = {}
 ViewmodelAimService.__index = ViewmodelAimService
@@ -15,7 +16,9 @@ function ViewmodelAimService.new()
     local self = {}
 
     self.aimActionName = "Aiming"
+    self.aimTweenInfo = TweenInfo.new(0.7)
 
+    self.viewmodel = nil
     self.currentWeapon = nil
 
     setmetatable(self, ViewmodelAimService)
@@ -23,7 +26,11 @@ function ViewmodelAimService.new()
 end
 
 
-function ViewmodelAimService:setupCurrentWeapon(newCurrentWeapon)
+function ViewmodelAimService:setup(newViewmodel, newCurrentWeapon)
+    if not newViewmodel then return end
+    if not newViewmodel:IsA("Model") then return end
+    self.viewmodel = newViewmodel
+
     if not newCurrentWeapon then return end
     if not newCurrentWeapon:IsA("Model") then return end
     self.currentWeapon = newCurrentWeapon
@@ -43,20 +50,29 @@ function ViewmodelAimService:enableAiming()
         if not placings then warn("No Folder Placings in current weaponl.") return end
 
         local viewmodelOffset = placings:FindFirstChild("ViewmodelOffset")
-        if not viewmodelOffset then return end
+        if not viewmodelOffset then warn("No Viewmodel Offset in Folder Placings in Weapon.") return end
 
         local aimOffset = placings:FindFirstChild("AimOffset")
-        if not aimOffset then return end
+        if not aimOffset then warn("No aim offset in Folder Placings in Weapon.") return end
 
         local defaultOffset = placings:FindFirstChild("DefaultOffset")
-        if not defaultOffset then return end
+        if not defaultOffset then warn("No default offset in Folder Placings in Weapon.") return end
+
+        local aimTween
+        local stopAimTween
 
         if inputState == Enum.UserInputState.Begin then
             -- Tween Viewmodel Offset to Aim offset.
+            if stopAimTween then stopAimTween:Stop() stopAimTween = nil end
+            aimTween = TweenService:Create(self.viewmodel.PrimaryPart, self.aimTweenInfo, {CFrame = aimOffset.Value})
+            aimTween:Play()
         end
 
         if inputState == Enum.UserInputState.End then
             -- Tween Viewmodel Offset back to the default offset.
+            if aimTween then aimTween:Stop() aimTween = nil end
+            stopAimTween = TweenService:Create(self.viewmodel.PrimaryPart, self.aimTweenInfo, {CFrame = defaultOffset.Value})
+            stopAimTween:Play()
         end
     end
 
