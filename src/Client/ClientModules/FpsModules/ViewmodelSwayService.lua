@@ -10,8 +10,12 @@ ViewmodelSwayService.__index = ViewmodelSwayService
 function ViewmodelSwayService.new()
     local self = {}
 
-    self.viewmodel = nil
+    self.aimingMultipler = 5
+    self.notAimingMultiplier = 10
+
     self.multiplier = 10
+
+    self.viewmodel = nil
 
     setmetatable(self, ViewmodelSwayService)
     return self
@@ -28,8 +32,31 @@ function ViewmodelSwayService:setupViewmodel(viewmodel)
 end
 
 
-function ViewmodelSwayService:sway()
+function ViewmodelSwayService:_handleMultiplier(aiming)
+
+    --[[
+        Parameters:
+        aiming: Bool
+    ]]
+
+    if aiming then
+        self.multiplier = self.aimingMultipler
+    else
+        self.multiplier = self.notAimingMultiplier
+    end
+end
+
+
+function ViewmodelSwayService:sway(aiming)
+
+    --[[
+        Parameters:
+        aiming: Bool
+    ]]
+
     if not self.viewmodel then return end
+
+    self:_handleMultiplier(aiming)
 
     local mouseDelta = UserInputService:GetMouseDelta()
 

@@ -21,6 +21,8 @@ function ViewmodelAimService.new()
     self.viewmodel = nil
     self.currentWeapon = nil
 
+    self.aiming = false
+
     setmetatable(self, ViewmodelAimService)
     return self
 end
@@ -72,6 +74,7 @@ function ViewmodelAimService:enableAiming()
             if stopAimTween then stopAimTween:Stop() stopAimTween = nil end
             aimTween = TweenService:Create(viewmodelOffset, self.aimTweenInfo, {Value = aimOffset.Value})
             aimTween:Play()
+            self.aiming = true
         end
 
         if inputState == Enum.UserInputState.End then
@@ -79,6 +82,7 @@ function ViewmodelAimService:enableAiming()
             if aimTween then aimTween:Stop() aimTween = nil end
             stopAimTween = TweenService:Create(viewmodelOffset, self.aimTweenInfo, {Value = defaultOffset.Value})
             stopAimTween:Play()
+            self.aiming = false
         end
     end
 

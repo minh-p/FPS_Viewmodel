@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-14.9054289</X>
-					<Y>17.7763958</Y>
-					<Z>24.0888195</Z>
-					<R00>0.989875615</R00>
-					<R01>-0.0501024202</R01>
-					<R02>0.132801056</R02>
+					<X>-3.31578445</X>
+					<Y>11.2631512</Y>
+					<Z>3.97486067</Z>
+					<R00>0.982548296</R00>
+					<R01>-0.0656575412</R01>
+					<R02>0.174034581</R02>
 					<R10>-0</R10>
-					<R11>0.935627818</R11>
-					<R12>0.352988243</R12>
-					<R20>-0.141937926</R20>
-					<R21>-0.349414468</R21>
-					<R22>0.92615509</R22>
+					<R11>0.935629964</R11>
+					<R12>0.352982491</R12>
+					<R20>-0.186007932</R20>
+					<R21>-0.346822351</R21>
+					<R22>0.91930151</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-15.171031</X>
-					<Y>17.0704193</Y>
-					<Z>22.2365093</Z>
+					<X>-3.66385365</X>
+					<Y>10.5571861</Y>
+					<Z>2.13625741</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -1828,7 +1828,7 @@ function ViewmodelService:_runViewmodel()
     local function moveViewmodel()
         local viewmodelSwayAnchorPoint = workspace.CurrentCamera.CFrame * viewmodelOffset.Value
         self.viewmodel.PrimaryPart.CFrame = viewmodelSwayAnchorPoint
-        self.viewmodelSway:sway()
+        self.viewmodelSway:sway(self.viewmodelAim.aiming)
     end
 
     self.viewmodelRenderEvent = RunService.RenderStepped:Connect(moveViewmodel)
@@ -1934,8 +1934,12 @@ ViewmodelSwayService.__index = ViewmodelSwayService
 function ViewmodelSwayService.new()
     local self = {}
 
-    self.viewmodel = nil
+    self.aimingMultipler = 5
+    self.notAimingMultiplier = 10
+
     self.multiplier = 10
+
+    self.viewmodel = nil
 
     setmetatable(self, ViewmodelSwayService)
     return self
@@ -1952,8 +1956,31 @@ function ViewmodelSwayService:setupViewmodel(viewmodel)
 end
 
 
-function ViewmodelSwayService:sway()
+function ViewmodelSwayService:_handleMultiplier(aiming)
+
+    --[[
+        Parameters:
+        aiming: Bool
+    ]]
+
+    if aiming then
+        self.multiplier = self.aimingMultipler
+    else
+        self.multiplier = self.notAimingMultiplier
+    end
+end
+
+
+function ViewmodelSwayService:sway(aiming)
+
+    --[[
+        Parameters:
+        aiming: Bool
+    ]]
+
     if not self.viewmodel then return end
+
+    self:_handleMultiplier(aiming)
 
     local mouseDelta = UserInputService:GetMouseDelta()
 
@@ -1998,6 +2025,8 @@ function ViewmodelAimService.new()
 
     self.viewmodel = nil
     self.currentWeapon = nil
+
+    self.aiming = false
 
     setmetatable(self, ViewmodelAimService)
     return self
@@ -2050,6 +2079,7 @@ function ViewmodelAimService:enableAiming()
             if stopAimTween then stopAimTween:Stop() stopAimTween = nil end
             aimTween = TweenService:Create(viewmodelOffset, self.aimTweenInfo, {Value = aimOffset.Value})
             aimTween:Play()
+            self.aiming = true
         end
 
         if inputState == Enum.UserInputState.End then
@@ -2057,6 +2087,7 @@ function ViewmodelAimService:enableAiming()
             if aimTween then aimTween:Stop() aimTween = nil end
             stopAimTween = TweenService:Create(viewmodelOffset, self.aimTweenInfo, {Value = defaultOffset.Value})
             stopAimTween:Play()
+            self.aiming = false
         end
     end
 

@@ -88,7 +88,7 @@ function ViewmodelService:_runViewmodel()
     local function moveViewmodel()
         local viewmodelSwayAnchorPoint = workspace.CurrentCamera.CFrame * viewmodelOffset.Value
         self.viewmodel.PrimaryPart.CFrame = viewmodelSwayAnchorPoint
-        self.viewmodelSway:sway()
+        self.viewmodelSway:sway(self.viewmodelAim.aiming)
     end
 
     self.viewmodelRenderEvent = RunService.RenderStepped:Connect(moveViewmodel)
