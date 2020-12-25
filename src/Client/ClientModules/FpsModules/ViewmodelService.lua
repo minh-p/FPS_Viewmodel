@@ -50,13 +50,26 @@ function ViewmodelService:_getNewViewmodel()
 end
 
 
+function ViewmodelService:_setupAiming()
+    if not self.viewmodel then return end
+
+    local configurations = self.currentWeapon:FindFirstChild("Configurations")
+    if not configurations then return end
+    
+    local aimable = configurations:FindFirstChild("Aimable")
+    if not aimable then return end
+
+    if aimable.Value == true then
+        self.viewmodelAim:setup(self.viewmodel, self.currentWeapon)
+        self.viewmodelAim:enableAiming()
+    end
+end
+
+
 function ViewmodelService:_runViewmodel()
     if not self.currentWeapon then return end
     if not self.viewmodel then return end
     self.viewmodel.Parent = workspace.CurrentCamera
-
-    self.viewmodelSway:setupViewmodel(self.viewmodel)
-    self.viewmodelAim:setup(self.viewmodel, self.currentWeapon)
 
     local placings = self.currentWeapon:FindFirstChild("Placing")
     if not placings then
@@ -70,6 +83,8 @@ function ViewmodelService:_runViewmodel()
         return
     end
 
+    self.viewmodelSway:setupViewmodel(self.viewmodel)
+
     local function moveViewmodel()
         local viewmodelSwayAnchorPoint = workspace.CurrentCamera.CFrame * viewmodelOffset.Value
         self.viewmodel.PrimaryPart.CFrame = viewmodelSwayAnchorPoint
@@ -78,7 +93,7 @@ function ViewmodelService:_runViewmodel()
 
     self.viewmodelRenderEvent = RunService.RenderStepped:Connect(moveViewmodel)
 
-    self.viewmodelAim:enableAiming()
+    self:_setupAiming()
 end
 
 

@@ -63,9 +63,9 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-18.764225</X>
-					<Y>9.82874584</Y>
-					<Z>32.2594223</Z>
+					<X>-14.9054289</X>
+					<Y>17.7763958</Y>
+					<Z>24.0888195</Z>
 					<R00>0.989875615</R00>
 					<R01>-0.0501024202</R01>
 					<R02>0.132801056</R02>
@@ -81,9 +81,9 @@
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-19.0298271</X>
-					<Y>9.12276936</Y>
-					<Z>30.4071121</Z>
+					<X>-15.171031</X>
+					<Y>17.0704193</Y>
+					<Z>22.2365093</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -1790,13 +1790,26 @@ function ViewmodelService:_getNewViewmodel()
 end
 
 
+function ViewmodelService:_setupAiming()
+    if not self.viewmodel then return end
+
+    local configurations = self.currentWeapon:FindFirstChild("Configurations")
+    if not configurations then return end
+    
+    local aimable = configurations:FindFirstChild("Aimable")
+    if not aimable then return end
+
+    if aimable.Value == true then
+        self.viewmodelAim:setup(self.viewmodel, self.currentWeapon)
+        self.viewmodelAim:enableAiming()
+    end
+end
+
+
 function ViewmodelService:_runViewmodel()
     if not self.currentWeapon then return end
     if not self.viewmodel then return end
     self.viewmodel.Parent = workspace.CurrentCamera
-
-    self.viewmodelSway:setupViewmodel(self.viewmodel)
-    self.viewmodelAim:setup(self.viewmodel, self.currentWeapon)
 
     local placings = self.currentWeapon:FindFirstChild("Placing")
     if not placings then
@@ -1810,6 +1823,8 @@ function ViewmodelService:_runViewmodel()
         return
     end
 
+    self.viewmodelSway:setupViewmodel(self.viewmodel)
+
     local function moveViewmodel()
         local viewmodelSwayAnchorPoint = workspace.CurrentCamera.CFrame * viewmodelOffset.Value
         self.viewmodel.PrimaryPart.CFrame = viewmodelSwayAnchorPoint
@@ -1818,7 +1833,7 @@ function ViewmodelService:_runViewmodel()
 
     self.viewmodelRenderEvent = RunService.RenderStepped:Connect(moveViewmodel)
 
-    self.viewmodelAim:enableAiming()
+    self:_setupAiming()
 end
 
 
@@ -4845,6 +4860,23 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 						</Properties>
 					</Item>
 				</Item>
+				<Item class="Folder" referent="RBX0045EAFDB25B4EBC9DA1F007FD8839A4">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<string name="Name">Configurations</string>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+					<Item class="BoolValue" referent="RBX6F5D92541E95434C878B25C91C4D12F8">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<string name="Name">Aimable</string>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<bool name="Value">true</bool>
+						</Properties>
+					</Item>
+				</Item>
 			</Item>
 			<Item class="Model" referent="RBXFD51C3BC15E14F4598F4FA331B259FB0">
 				<Properties>
@@ -5577,6 +5609,23 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 								<R21>0</R21>
 								<R22>-4.37113883e-08</R22>
 							</CoordinateFrame>
+						</Properties>
+					</Item>
+				</Item>
+				<Item class="Folder" referent="RBXE9B941D19813469EB261A99A25201B16">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<string name="Name">Configurations</string>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+					<Item class="BoolValue" referent="RBX40C5B9895B2648998D26003E34AD0378">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<string name="Name">Aimable</string>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<bool name="Value">true</bool>
 						</Properties>
 					</Item>
 				</Item>
