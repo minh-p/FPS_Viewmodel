@@ -58,7 +58,8 @@ function ViewmodelService:_runViewmodel()
     self.viewmodelSway:setupViewmodel(self.viewmodel)
 
     local placings = self.currentWeapon:FindFirstChild("Placing")
-    if not placings then warn("Missing folder placings for weapon: " .. self.currentWeapon.Name)
+    if not placings then
+        warn("Missing folder placings for weapon: " .. self.currentWeapon.Name)
         return
     end
 
