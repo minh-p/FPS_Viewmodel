@@ -1945,6 +1945,87 @@ return ViewmodelSwayService]]></ProtectedString>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
+					<Item class="ModuleScript" referent="RBXBDD537C1A3EA40FBAD72E562AFA2663C">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<Content name="LinkedSource"><null></null></Content>
+							<string name="Name">ViewmodelAimService</string>
+							<string name="ScriptGuid">{3179D962-590E-4FD4-B886-7B77B96F5B18}</string>
+							<ProtectedString name="Source"><![CDATA[-- Makes the player be able to aim using ContextActionService, and changing The viewmodel offset.
+-- 12/25/2020
+-- Minhnormal
+
+local ContextActionService = game:GetService("ContextActionService")
+
+local ViewmodelAimService = {}
+ViewmodelAimService.__index = ViewmodelAimService
+
+ViewmodelAimService.aimInputs = {
+    Enum.UserInputType.MouseButton2,
+}
+
+function ViewmodelAimService.new()
+    local self = {}
+
+    self.aimActionName = "Aiming"
+
+    self.currentWeapon = nil
+
+    setmetatable(self, ViewmodelAimService)
+    return self
+end
+
+
+function ViewmodelAimService:setupCurrentWeapon(newCurrentWeapon)
+    if not newCurrentWeapon then return end
+    if not newCurrentWeapon:IsA("Model") then return end
+    self.currentWeapon = newCurrentWeapon
+end
+
+
+function ViewmodelAimService:_changeViewmodelOffset()
+    
+end
+
+
+function ViewmodelAimService:enableAiming()
+    local function handleAiming(_, inputState, _)
+        if not self.currentWeapon then return end
+
+        local placings = self.currentWeapon:FindFirstChild("Placing")
+        if not placings then warn("No Folder Placings in current weaponl.") return end
+
+        local viewmodelOffset = placings:FindFirstChild("ViewmodelOffset")
+        if not viewmodelOffset then return end
+
+        local aimOffset = placings:FindFirstChild("AimOffset")
+        if not aimOffset then return end
+
+        local defaultOffset = placings:FindFirstChild("DefaultOffset")
+        if not defaultOffset then return end
+
+        if inputState == Enum.UserInputState.Begin then
+            -- Tween Viewmodel Offset to Aim offset.
+        end
+
+        if inputState == Enum.UserInputState.End then
+            -- Tween Viewmodel Offset back to the default offset.
+        end
+    end
+
+    ContextActionService:BindAction(self.aimActionName, handleAiming, true, table.unpack(self.aimInputs))
+end
+
+
+function ViewmodelAimService:disableAiming()
+    ContextActionService:UnbindAction(self.aimActionName)
+end
+
+return ViewmodelAimService]]></ProtectedString>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+						</Properties>
+					</Item>
 				</Item>
 			</Item>
 			<Item class="LocalScript" referent="RBXF87292510559419D95B9E0DC31EBF0F2">
@@ -4709,6 +4790,28 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 							</CoordinateFrame>
 						</Properties>
 					</Item>
+					<Item class="CFrameValue" referent="RBXE09AAEE6BECB412095DE09288709B5DC">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<string name="Name">DefaultOffset</string>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<CoordinateFrame name="Value">
+								<X>0</X>
+								<Y>-1</Y>
+								<Z>0</Z>
+								<R00>-4.37113883e-08</R00>
+								<R01>0</R01>
+								<R02>1</R02>
+								<R10>0</R10>
+								<R11>1</R11>
+								<R12>0</R12>
+								<R20>-1</R20>
+								<R21>0</R21>
+								<R22>-4.37113883e-08</R22>
+							</CoordinateFrame>
+						</Properties>
+					</Item>
 				</Item>
 			</Item>
 			<Item class="Model" referent="RBXFD51C3BC15E14F4598F4FA331B259FB0">
@@ -5418,6 +5521,28 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 								<R12>0</R12>
 								<R20>-0.999390841</R20>
 								<R21>0.0348994955</R21>
+								<R22>-4.37113883e-08</R22>
+							</CoordinateFrame>
+						</Properties>
+					</Item>
+					<Item class="CFrameValue" referent="RBX121D325307CC4DEABDFEADD6C21C417B">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<string name="Name">DefaultOffset</string>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<CoordinateFrame name="Value">
+								<X>0</X>
+								<Y>-1</Y>
+								<Z>0</Z>
+								<R00>-4.37113883e-08</R00>
+								<R01>0</R01>
+								<R02>1</R02>
+								<R10>0</R10>
+								<R11>1</R11>
+								<R12>0</R12>
+								<R20>-1</R20>
+								<R21>0</R21>
 								<R22>-4.37113883e-08</R22>
 							</CoordinateFrame>
 						</Properties>
