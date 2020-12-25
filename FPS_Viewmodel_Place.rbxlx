@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-18.022068</X>
-					<Y>9.53922939</Y>
-					<Z>31.4674969</Z>
-					<R00>0.980409563</R00>
-					<R01>-0.067884393</R01>
-					<R02>0.184902191</R02>
+					<X>-18.764225</X>
+					<Y>9.82874584</Y>
+					<Z>32.2594223</Z>
+					<R00>0.989875615</R00>
+					<R01>-0.0501024202</R01>
+					<R02>0.132801056</R02>
 					<R10>-0</R10>
-					<R11>0.938733637</R11>
-					<R12>0.344643593</R12>
-					<R20>-0.196969837</R20>
-					<R21>-0.337891877</R21>
-					<R22>0.920343399</R22>
+					<R11>0.935627818</R11>
+					<R12>0.352988243</R12>
+					<R20>-0.141937926</R20>
+					<R21>-0.349414468</R21>
+					<R22>0.92615509</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-18.3918724</X>
-					<Y>8.84994221</Y>
-					<Z>29.6268101</Z>
+					<X>-19.0298271</X>
+					<Y>9.12276936</Y>
+					<Z>30.4071121</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -1928,6 +1928,11 @@ end
 
 
 function ViewmodelSwayService:setupViewmodel(viewmodel)
+    --[[
+        Parameters:
+        viewmodel: Model
+    ]]
+    
     self.viewmodel = viewmodel
 end
 
@@ -1985,6 +1990,12 @@ end
 
 
 function ViewmodelAimService:setup(newViewmodel, newCurrentWeapon)
+    --[[
+        Parameters:
+        newViewmodel: Model
+        newCurrentWeapon: Model
+    ]]
+
     if not newViewmodel then return end
     if not newViewmodel:IsA("Model") then return end
     self.viewmodel = newViewmodel

@@ -19,6 +19,11 @@ end
 
 
 function ViewmodelSwayService:setupViewmodel(viewmodel)
+    --[[
+        Parameters:
+        viewmodel: Model
+    ]]
+    
     self.viewmodel = viewmodel
 end
 

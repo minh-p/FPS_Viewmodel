@@ -27,6 +27,12 @@ end
 
 
 function ViewmodelAimService:setup(newViewmodel, newCurrentWeapon)
+    --[[
+        Parameters:
+        newViewmodel: Model
+        newCurrentWeapon: Model
+    ]]
+
     if not newViewmodel then return end
     if not newViewmodel:IsA("Model") then return end
     self.viewmodel = newViewmodel
