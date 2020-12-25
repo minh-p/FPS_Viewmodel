@@ -4687,6 +4687,28 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 							</CoordinateFrame>
 						</Properties>
 					</Item>
+					<Item class="CFrameValue" referent="RBXB1F560D903DB4F968F2A87BF1782E9EB">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<string name="Name">AimOffset</string>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<CoordinateFrame name="Value">
+								<X>-1</X>
+								<Y>-0.649999976</Y>
+								<Z>1.70000005</Z>
+								<R00>-4.36847607e-08</R00>
+								<R01>1.52550539e-09</R01>
+								<R02>1</R02>
+								<R10>0.0348994955</R10>
+								<R11>0.999390841</R11>
+								<R12>0</R12>
+								<R20>-0.999390841</R20>
+								<R21>0.0348994955</R21>
+								<R22>-4.37113883e-08</R22>
+							</CoordinateFrame>
+						</Properties>
+					</Item>
 				</Item>
 			</Item>
 			<Item class="Model" referent="RBXFD51C3BC15E14F4598F4FA331B259FB0">
@@ -5374,6 +5396,28 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 								<R12>0</R12>
 								<R20>-1</R20>
 								<R21>0</R21>
+								<R22>-4.37113883e-08</R22>
+							</CoordinateFrame>
+						</Properties>
+					</Item>
+					<Item class="CFrameValue" referent="RBXB971C87ED00B4559AD4357F913F31C91">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<string name="Name">AimOffset</string>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<CoordinateFrame name="Value">
+								<X>-1</X>
+								<Y>-0.649999976</Y>
+								<Z>1.70000005</Z>
+								<R00>-4.36847607e-08</R00>
+								<R01>1.52550539e-09</R01>
+								<R02>1</R02>
+								<R10>0.0348994955</R10>
+								<R11>0.999390841</R11>
+								<R12>0</R12>
+								<R20>-0.999390841</R20>
+								<R21>0.0348994955</R21>
 								<R22>-4.37113883e-08</R22>
 							</CoordinateFrame>
 						</Properties>
