@@ -29,6 +29,7 @@ function ViewmodelService.new(weaponStorer, viewmodelReference)
     local self = {}
 
     self.viewmodelSway = require(clientModules.FpsModules.ViewmodelSwayService).new()
+    self.viewmodelAim = require(clientModules.FpsModules.ViewmodelAimService).new()
 
     self.weaponStorer = weaponStorer
     self.viewmodelReference = viewmodelReference
@@ -55,6 +56,7 @@ function ViewmodelService:_runViewmodel()
     self.viewmodel.Parent = workspace.CurrentCamera
 
     self.viewmodelSway:setupViewmodel(self.viewmodel)
+    self.viewmodelAim:setup(self.viewmodel, self.currentWeapon)
 
     local placings = self.currentWeapon:FindFirstChild("Placing")
     if not placings then
@@ -75,6 +77,8 @@ function ViewmodelService:_runViewmodel()
     end
 
     self.viewmodelRenderEvent = RunService.RenderStepped:Connect(moveViewmodel)
+
+    self.viewmodelAim:enableAiming()
 end
 
 
@@ -122,6 +126,7 @@ function ViewmodelService:unequipWeapon()
     self.currentWeapon:Destroy()
     self.currentWeapon = nil
 
+    self.viewmodelAim:disableAiming()
     self.viewmodelRenderEvent:Disconnect()
     self.viewmodelRenderEvent = nil
 

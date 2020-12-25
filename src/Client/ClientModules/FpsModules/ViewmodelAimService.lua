@@ -16,7 +16,7 @@ function ViewmodelAimService.new()
     local self = {}
 
     self.aimActionName = "Aiming"
-    self.aimTweenInfo = TweenInfo.new(0.7)
+    self.aimTweenInfo = TweenInfo.new(0.5, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0)
 
     self.viewmodel = nil
     self.currentWeapon = nil
@@ -64,14 +64,14 @@ function ViewmodelAimService:enableAiming()
         if inputState == Enum.UserInputState.Begin then
             -- Tween Viewmodel Offset to Aim offset.
             if stopAimTween then stopAimTween:Stop() stopAimTween = nil end
-            aimTween = TweenService:Create(self.viewmodel.PrimaryPart, self.aimTweenInfo, {CFrame = aimOffset.Value})
+            aimTween = TweenService:Create(viewmodelOffset, self.aimTweenInfo, {Value = aimOffset.Value})
             aimTween:Play()
         end
 
         if inputState == Enum.UserInputState.End then
             -- Tween Viewmodel Offset back to the default offset.
             if aimTween then aimTween:Stop() aimTween = nil end
-            stopAimTween = TweenService:Create(self.viewmodel.PrimaryPart, self.aimTweenInfo, {CFrame = defaultOffset.Value})
+            stopAimTween = TweenService:Create(viewmodelOffset, self.aimTweenInfo, {Value = defaultOffset.Value})
             stopAimTween:Play()
         end
     end
