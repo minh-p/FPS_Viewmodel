@@ -3,8 +3,7 @@
 -- Minhnormal
 
 --[[
-    How to use, currently of 12/20/2020
-    The gun need to primary part as an object named "GunAttach", for this to work.
+    How to use, as of 12/25/2020, every weapons must have PrimaryPart, which will be then sticked to the ViewModel when they are equipped.
 ]]
 
 local PlayerScripts = game.Players.LocalPlayer.PlayerScripts
@@ -98,7 +97,7 @@ function ViewmodelService:_equip(weapon)
     local clonedWeapon = weapon:Clone()
     clonedWeapon.Parent = self.viewmodel
 
-    viewmodelGunAttach.Part1 = clonedWeapon.GunAttach
+    viewmodelGunAttach.Part1 = clonedWeapon.PrimaryPart
 
     self.currentWeapon = clonedWeapon
 

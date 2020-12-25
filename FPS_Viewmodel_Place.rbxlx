@@ -1743,8 +1743,7 @@ return ClientWeaponService]]></ProtectedString>
 -- Minhnormal
 
 --[[
-    How to use, currently of 12/20/2020
-    The gun need to primary part as an object named "GunAttach", for this to work.
+    How to use, as of 12/25/2020, every weapons must have PrimaryPart, which will be then sticked to the ViewModel when they are equipped.
 ]]
 
 local PlayerScripts = game.Players.LocalPlayer.PlayerScripts
@@ -1798,7 +1797,8 @@ function ViewmodelService:_runViewmodel()
     self.viewmodelSway:setupViewmodel(self.viewmodel)
 
     local placings = self.currentWeapon:FindFirstChild("Placing")
-    if not placings then warn("Missing folder placings for weapon: " .. self.currentWeapon.Name)
+    if not placings then
+        warn("Missing folder placings for weapon: " .. self.currentWeapon.Name)
         return
     end
 
@@ -1837,7 +1837,7 @@ function ViewmodelService:_equip(weapon)
     local clonedWeapon = weapon:Clone()
     clonedWeapon.Parent = self.viewmodel
 
-    viewmodelGunAttach.Part1 = clonedWeapon.GunAttach
+    viewmodelGunAttach.Part1 = clonedWeapon.PrimaryPart
 
     self.currentWeapon = clonedWeapon
 
@@ -1883,7 +1883,7 @@ function ViewmodelService:equipWeapon(weaponName)
     self:unequipWeapon()
 
     if weaponName == self.lastWeaponEquippedName then
-        -- If we reach this point, we now know that our last weapon equipped is now considered as nothing.
+        -- If we reach this point, we now know that our last weapon equipped is now considered as nothing, so is its name.
         self.lastWeaponEquippedName = nil
         return    
     end
@@ -4037,7 +4037,7 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 						<Z>0</Z>
 					</Vector3>
 					<string name="Name">AR</string>
-					<Ref name="PrimaryPart">RBX1430984581424981A1EEA38A022B37D4</Ref>
+					<Ref name="PrimaryPart">RBX37EFE78F4934483F83362D0B4F69FC39</Ref>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
@@ -4728,7 +4728,7 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 						<Z>0</Z>
 					</Vector3>
 					<string name="Name">ARClone</string>
-					<Ref name="PrimaryPart">RBX2E59698A18844E03855F974D5387F0B3</Ref>
+					<Ref name="PrimaryPart">RBXE623B9151B7043B88870051FA87B7D48</Ref>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
