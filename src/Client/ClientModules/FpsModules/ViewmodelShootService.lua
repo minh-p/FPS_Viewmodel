@@ -5,6 +5,9 @@
 local ContextActionService = game:GetService("ContextActionService")
 local Debris = game:GetService("Debris")
 
+local PlayerScripts = game.Players.LocalPlayer.PlayerScripts
+local clientModules = PlayerScripts.ClientModules
+
 local ViewmodelFiringService = {}
 ViewmodelFiringService.__index = ViewmodelFiringService
 
@@ -14,6 +17,8 @@ function ViewmodelFiringService.new()
     self.firingInputs = {
         Enum.UserInputType.MouseButton1
     }
+
+    self.recoil = require(clientModules.FpsModules.RecoilService).new()
 
     self.firingActionName = "WeaponFire"
 
@@ -47,6 +52,11 @@ function ViewmodelFiringService:setup(viewmodel, currentWeapon)
 end
 
 
+function ViewmodelFiringService:_getGunRPM()
+    return 600
+end
+
+
 function ViewmodelFiringService:_shootWeapon()
     if not self.viewmodel then return end
     if not self.currentWeapon then return end
@@ -74,6 +84,8 @@ function ViewmodelFiringService:_shootWeapon()
             muzzleFlash.Transparency = NumberSequence.new(1)
         end
     end))
+
+    self.recoil:applyRecoil()
 end
 
 
@@ -94,10 +106,12 @@ function ViewmodelFiringService:_bindFiring()
             if not automatic then return end
 
             if automatic.Value == true and self.firing == true then
+                local gunRPM = self:_getGunRPM()
+
                 repeat
                     self.canFire = false
                     self:_shootWeapon()
-                    wait()
+                    wait(60/gunRPM)
                     self.canFire = true
                 until not self.firing
             end
@@ -117,7 +131,7 @@ function ViewmodelFiringService:enableFiring()
 end
 
 
-function ViewmodelFiringService:disableFiring()
+function ViewmodelFiringService:disableShooting()
     ContextActionService:UnbindAction(self.firingActionName)
 end
 
