@@ -10,14 +10,14 @@ ViewmodelSwayService.__index = ViewmodelSwayService
 function ViewmodelSwayService.new()
     local self = {}
 
-    self.aimingMultipler = 5
-    self.notAimingMultiplier = 10
+    self.aimingMultipler = 3
+    self.notAimingMultiplier = 6
 
-    self.swayXAimingLimit = 0.1
-    self.swayXNotAimingLimit = 1
+    self.swayXAimingLimit = 0.005
+    self.swayXNotAimingLimit = 0.05
 
     self.swayYAimingLimit = 0.005
-    self.swayYNotAimingLimit = 0.1
+    self.swayYNotAimingLimit = 0.05
 
     self.multiplier = 10
     

@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-2.93275356</X>
-					<Y>11.2553062</Y>
-					<Z>3.86198115</Z>
-					<R00>0.920778275</R00>
-					<R01>-0.136163518</R01>
-					<R02>0.365550011</R02>
-					<R10>-7.45057971e-09</R10>
-					<R11>0.93710041</R11>
-					<R12>0.349060029</R12>
-					<R20>-0.390086263</R20>
-					<R21>-0.321406901</R21>
-					<R22>0.862861753</R22>
+					<X>-9.62395477</X>
+					<Y>8.84741116</Y>
+					<Z>-2.3309114</Z>
+					<R00>0.960682273</R00>
+					<R01>0.126309142</R01>
+					<R02>-0.247256279</R02>
+					<R10>-7.45058149e-09</R10>
+					<R11>0.89053154</R11>
+					<R12>0.454921722</R12>
+					<R20>0.277650267</R20>
+					<R21>-0.437035233</R21>
+					<R22>0.855517745</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-3.66385365</X>
-					<Y>10.5571861</Y>
-					<Z>2.13625741</Z>
+					<X>-9.12944221</X>
+					<Y>7.93756771</Y>
+					<Z>-4.04194689</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -1934,14 +1934,14 @@ ViewmodelSwayService.__index = ViewmodelSwayService
 function ViewmodelSwayService.new()
     local self = {}
 
-    self.aimingMultipler = 5
-    self.notAimingMultiplier = 10
+    self.aimingMultipler = 3
+    self.notAimingMultiplier = 6
 
-    self.swayXAimingLimit = 0.1
-    self.swayXNotAimingLimit = 1
+    self.swayXAimingLimit = 0.005
+    self.swayXNotAimingLimit = 0.05
 
     self.swayYAimingLimit = 0.005
-    self.swayYNotAimingLimit = 0.1
+    self.swayYNotAimingLimit = 0.05
 
     self.multiplier = 10
     
