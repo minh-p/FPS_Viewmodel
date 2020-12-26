@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-9.62395477</X>
-					<Y>8.84741116</Y>
-					<Z>-2.3309114</Z>
-					<R00>0.960682273</R00>
-					<R01>0.126309142</R01>
-					<R02>-0.247256279</R02>
-					<R10>-7.45058149e-09</R10>
-					<R11>0.89053154</R11>
-					<R12>0.454921722</R12>
-					<R20>0.277650267</R20>
-					<R21>-0.437035233</R21>
-					<R22>0.855517745</R22>
+					<X>-2.58408546</X>
+					<Y>6.25662041</Y>
+					<Z>15.232132</Z>
+					<R00>0.843172669</R00>
+					<R01>0.246700764</R01>
+					<R02>-0.477701306</R02>
+					<R10>-0</R10>
+					<R11>0.888510525</R11>
+					<R12>0.458856285</R12>
+					<R20>0.537642777</R20>
+					<R21>-0.38689509</R21>
+					<R22>0.74916786</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-9.12944221</X>
-					<Y>7.93756771</Y>
-					<Z>-4.04194689</Z>
+					<X>-1.62868273</X>
+					<Y>5.33890772</Y>
+					<Z>13.7337961</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -323,18 +323,18 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>-11.4550133</X>
-						<Y>0.590000212</Y>
-						<Z>-13.0450087</Z>
-						<R00>-1.49011612e-08</R00>
-						<R01>-1.86264515e-09</R01>
+						<X>-8.66500473</X>
+						<Y>0.590000272</Y>
+						<Z>1.82500744</Z>
+						<R00>-2.98023224e-08</R00>
+						<R01>-3.72529008e-09</R01>
 						<R02>1</R02>
-						<R10>-1.49011612e-08</R10>
+						<R10>-2.98023224e-08</R10>
 						<R11>1</R11>
-						<R12>-1.86264515e-09</R12>
+						<R12>-3.72529008e-09</R12>
 						<R20>-1</R20>
-						<R21>1.49011612e-08</R21>
-						<R22>1.49011612e-08</R22>
+						<R21>2.98023224e-08</R21>
+						<R22>2.98023224e-08</R22>
 					</CoordinateFrame>
 					<bool name="CanCollide">false</bool>
 					<bool name="CastShadow">true</bool>
@@ -400,18 +400,18 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>-10.0150185</X>
-						<Y>0.589998186</Y>
-						<Z>-12.2500086</Z>
-						<R00>-1.49011612e-08</R00>
-						<R01>-1.86264515e-09</R01>
+						<X>-7.22500944</X>
+						<Y>0.589998245</Y>
+						<Z>2.62000751</Z>
+						<R00>-2.98023224e-08</R00>
+						<R01>-3.72529008e-09</R01>
 						<R02>1</R02>
-						<R10>-1.49011612e-08</R10>
+						<R10>-2.98023224e-08</R10>
 						<R11>1</R11>
-						<R12>-1.86264515e-09</R12>
+						<R12>-3.72529008e-09</R12>
 						<R20>-1</R20>
-						<R21>1.49011612e-08</R21>
-						<R22>1.49011612e-08</R22>
+						<R21>2.98023224e-08</R21>
+						<R22>2.98023224e-08</R22>
 					</CoordinateFrame>
 					<bool name="CanCollide">false</bool>
 					<bool name="CastShadow">true</bool>
@@ -600,18 +600,18 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>-8.57501316</X>
-						<Y>0.590000212</Y>
-						<Z>-13.0450087</Z>
-						<R00>-1.49011612e-08</R00>
-						<R01>-1.86264515e-09</R01>
+						<X>-5.78500414</X>
+						<Y>0.590000272</Y>
+						<Z>1.82500744</Z>
+						<R00>-2.98023224e-08</R00>
+						<R01>-3.72529008e-09</R01>
 						<R02>1</R02>
-						<R10>-1.49011612e-08</R10>
+						<R10>-2.98023224e-08</R10>
 						<R11>1</R11>
-						<R12>-1.86264515e-09</R12>
+						<R12>-3.72529008e-09</R12>
 						<R20>-1</R20>
-						<R21>1.49011612e-08</R21>
-						<R22>1.49011612e-08</R22>
+						<R21>2.98023224e-08</R21>
+						<R22>2.98023224e-08</R22>
 					</CoordinateFrame>
 					<bool name="CanCollide">false</bool>
 					<bool name="CastShadow">true</bool>
@@ -736,17 +736,17 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>-10.019763</X>
-							<Y>0.856076717</Y>
-							<Z>-12.5926046</Z>
+							<X>-7.22975397</X>
+							<Y>0.856076777</Y>
+							<Z>2.27741146</Z>
 							<R00>-1</R00>
-							<R01>-1.86264515e-09</R01>
-							<R02>-1.49011612e-08</R02>
-							<R10>1.86264515e-09</R10>
+							<R01>-3.72529008e-09</R01>
+							<R02>-2.98023224e-08</R02>
+							<R10>3.72529008e-09</R10>
 							<R11>1</R11>
-							<R12>-1.49011612e-08</R12>
-							<R20>-1.49011612e-08</R20>
-							<R21>1.49011612e-08</R21>
+							<R12>-2.98023224e-08</R12>
+							<R20>-2.98023224e-08</R20>
+							<R21>2.98023224e-08</R21>
 							<R22>-1</R22>
 						</CoordinateFrame>
 						<bool name="CanCollide">false</bool>
@@ -831,17 +831,17 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>-10.0264769</X>
-							<Y>0.516900539</Y>
-							<Z>-12.6623163</Z>
+							<X>-7.23646784</X>
+							<Y>0.516900599</Y>
+							<Z>2.20769978</Z>
 							<R00>-1</R00>
-							<R01>-1.86264515e-09</R01>
-							<R02>-1.49011612e-08</R02>
-							<R10>1.86264515e-09</R10>
+							<R01>-3.72529008e-09</R01>
+							<R02>-2.98023224e-08</R02>
+							<R10>3.72529008e-09</R10>
 							<R11>1</R11>
-							<R12>-1.49011612e-08</R12>
-							<R20>-1.49011612e-08</R20>
-							<R21>1.49011612e-08</R21>
+							<R12>-2.98023224e-08</R12>
+							<R20>-2.98023224e-08</R20>
+							<R21>2.98023224e-08</R21>
 							<R22>-1</R22>
 						</CoordinateFrame>
 						<bool name="CanCollide">false</bool>
@@ -926,17 +926,17 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>-9.94896221</X>
+							<X>-7.15895319</X>
 							<Y>1.20609856</Y>
-							<Z>-12.5602064</Z>
+							<Z>2.30980968</Z>
 							<R00>-1</R00>
-							<R01>-1.86264515e-09</R01>
-							<R02>-1.49011612e-08</R02>
-							<R10>1.86264515e-09</R10>
+							<R01>-3.72529008e-09</R01>
+							<R02>-2.98023224e-08</R02>
+							<R10>3.72529008e-09</R10>
 							<R11>1</R11>
-							<R12>-1.49011612e-08</R12>
-							<R20>-1.49011612e-08</R20>
-							<R21>1.49011612e-08</R21>
+							<R12>-2.98023224e-08</R12>
+							<R20>-2.98023224e-08</R20>
+							<R21>2.98023224e-08</R21>
 							<R22>-1</R22>
 						</CoordinateFrame>
 						<bool name="CanCollide">false</bool>
@@ -1021,17 +1021,17 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>-10.0277128</X>
-							<Y>0.659022808</Y>
-							<Z>-12.0328989</Z>
+							<X>-7.2377038</X>
+							<Y>0.659022868</Y>
+							<Z>2.8371172</Z>
 							<R00>1</R00>
-							<R01>-1.86264515e-09</R01>
-							<R02>1.49011612e-08</R02>
-							<R10>-1.86264515e-09</R10>
+							<R01>-3.72529008e-09</R01>
+							<R02>2.98023224e-08</R02>
+							<R10>-3.72529008e-09</R10>
 							<R11>1</R11>
-							<R12>1.49011612e-08</R12>
-							<R20>1.49011612e-08</R20>
-							<R21>1.49011612e-08</R21>
+							<R12>2.98023224e-08</R12>
+							<R20>2.98023224e-08</R20>
+							<R21>2.98023224e-08</R21>
 							<R22>1</R22>
 						</CoordinateFrame>
 						<bool name="CanCollide">false</bool>
@@ -1259,17 +1259,17 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>-6.8377037</X>
+							<X>-4.04769468</X>
 							<Y>3.52898836</Y>
-							<Z>-12.6528988</Z>
+							<Z>2.21711731</Z>
 							<R00>1</R00>
-							<R01>-1.86264515e-09</R01>
-							<R02>1.49011612e-08</R02>
-							<R10>-1.86264515e-09</R10>
+							<R01>-3.72529008e-09</R01>
+							<R02>2.98023224e-08</R02>
+							<R10>-3.72529008e-09</R10>
 							<R11>1</R11>
-							<R12>1.49011612e-08</R12>
-							<R20>1.49011612e-08</R20>
-							<R21>1.49011612e-08</R21>
+							<R12>2.98023224e-08</R12>
+							<R20>2.98023224e-08</R20>
+							<R21>2.98023224e-08</R21>
 							<R22>1</R22>
 						</CoordinateFrame>
 						<bool name="CanCollide">false</bool>
@@ -2174,6 +2174,7 @@ return ViewmodelAimService]]></ProtectedString>
 -- Minhnormal
 
 local ContextActionService = game:GetService("ContextActionService")
+local Debris = game:GetService("Debris")
 
 local ViewmodelFiringService = {}
 ViewmodelFiringService.__index = ViewmodelFiringService
@@ -2189,6 +2190,9 @@ function ViewmodelFiringService.new()
 
     self.viewmodel = nil
     self.currentWeapon = nil
+
+    self.canFire = true
+    self.firing = false
 
     setmetatable(self, ViewmodelFiringService)
     return self
@@ -2214,9 +2218,65 @@ function ViewmodelFiringService:setup(viewmodel, currentWeapon)
 end
 
 
+function ViewmodelFiringService:_shootWeapon()
+    if not self.viewmodel then return end
+    if not self.currentWeapon then return end
+
+    local sounds = self.currentWeapon:FindFirstChild("Sounds")
+    if sounds then
+        local shootingSound = sounds:FindFirstChild("Fired")
+        if shootingSound then
+            local clonedShootingSound = shootingSound:Clone()
+            clonedShootingSound.Parent = self.currentWeapon.PrimaryPart
+            clonedShootingSound:Play()
+
+            Debris:AddItem(clonedShootingSound, 5)
+        end
+    end
+
+    coroutine.resume(coroutine.create(function ()
+        local weaponBarrel = self.currentWeapon:FindFirstChild("Barrel") or self.currentWeapon.PrimaryPart
+        if not weaponBarrel then return end
+    
+        local muzzleFlash = weaponBarrel:FindFirstChild("Flash")
+        if muzzleFlash then
+            muzzleFlash.Transparency = NumberSequence.new(muzzleFlash._Transparency.Value)
+            wait()
+            muzzleFlash.Transparency = NumberSequence.new(1)
+        end
+    end))
+end
+
+
 function ViewmodelFiringService:_bindFiring()
-    local function handleFiring()
-        print("FIRE")
+    local function handleFiring(_, inputState)
+        if inputState == Enum.UserInputState.Begin then
+            if self.canFire == false then return end
+            self.firing = true
+
+            self.canFire = false
+            self:_shootWeapon()
+            self.canFire = true
+
+            local configurations = self.currentWeapon:FindFirstChild("Configurations")
+            if not configurations then return end
+            
+            local automatic = configurations:FindFirstChild("Automatic")
+            if not automatic then return end
+
+            if automatic.Value == true and self.firing == true then
+                repeat
+                    self.canFire = false
+                    self:_shootWeapon()
+                    wait()
+                    self.canFire = true
+                until not self.firing
+            end
+        end
+
+        if inputState == Enum.UserInputState.End then
+            self.firing = false
+        end
     end
 
     ContextActionService:BindAction(self.firingActionName, handleFiring, true, table.unpack(self.firingInputs))
@@ -4694,44 +4754,6 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 							<Z>0.609999955</Z>
 						</Vector3>
 					</Properties>
-					<Item class="Sound" referent="RBX92103A3CBF75427E805BF73FC95DE5B2">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<float name="EmitterSize">10</float>
-							<bool name="Looped">false</bool>
-							<string name="Name">Fired</string>
-							<bool name="PlayOnRemove">false</bool>
-							<float name="PlaybackSpeed">1</float>
-							<bool name="Playing">false</bool>
-							<token name="RollOffMode">0</token>
-							<Ref name="SoundGroup">null</Ref>
-							<Content name="SoundId"><url>rbxassetid://3806349898</url></Content>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-							<double name="TimePosition">0</double>
-							<float name="Volume">0.5</float>
-							<float name="xmlRead_MaxDistance_3">10000</float>
-						</Properties>
-					</Item>
-					<Item class="Sound" referent="RBX5CAF873BA6C0498487453046967CAEAF">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<float name="EmitterSize">10</float>
-							<bool name="Looped">false</bool>
-							<string name="Name">Reload</string>
-							<bool name="PlayOnRemove">false</bool>
-							<float name="PlaybackSpeed">1</float>
-							<bool name="Playing">false</bool>
-							<token name="RollOffMode">0</token>
-							<Ref name="SoundGroup">null</Ref>
-							<Content name="SoundId"><url>rbxassetid://3821787597</url></Content>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-							<double name="TimePosition">0</double>
-							<float name="Volume">0.5</float>
-							<float name="xmlRead_MaxDistance_3">10000</float>
-						</Properties>
-					</Item>
 					<Item class="Motor6D" referent="RBXCAF61D1D058F4891B8E1DF6A839261A1">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
@@ -4855,6 +4877,47 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
+					<Item class="Motor6D" referent="RBX944BE5CABE594CB3B3CD99B39157B383">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<CoordinateFrame name="C0">
+								<X>0</X>
+								<Y>0.420000076</Y>
+								<Z>-2.75999832</Z>
+								<R00>1</R00>
+								<R01>0</R01>
+								<R02>0</R02>
+								<R10>0</R10>
+								<R11>1</R11>
+								<R12>0</R12>
+								<R20>0</R20>
+								<R21>0</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<CoordinateFrame name="C1">
+								<X>0</X>
+								<Y>0</Y>
+								<Z>0</Z>
+								<R00>1</R00>
+								<R01>0</R01>
+								<R02>0</R02>
+								<R10>0</R10>
+								<R11>1</R11>
+								<R12>0</R12>
+								<R20>0</R20>
+								<R21>0</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<float name="DesiredAngle">0</float>
+							<bool name="Enabled">true</bool>
+							<float name="MaxVelocity">0</float>
+							<string name="Name">Barrel</string>
+							<Ref name="Part0">RBX37EFE78F4934483F83362D0B4F69FC39</Ref>
+							<Ref name="Part1">RBX3601C6957BF645EF9C7EFBD0B9E90AA2</Ref>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+						</Properties>
+					</Item>
 				</Item>
 				<Item class="Part" referent="RBX3601C6957BF645EF9C7EFBD0B9E90AA2">
 					<Properties>
@@ -4932,6 +4995,49 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 							<Z>0.24999997</Z>
 						</Vector3>
 					</Properties>
+					<Item class="ParticleEmitter" referent="RBX1C27A17ED91E4B259FB6F52924CED6C2">
+						<Properties>
+							<Vector3 name="Acceleration">
+								<X>0</X>
+								<Y>0</Y>
+								<Z>0</Z>
+							</Vector3>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<ColorSequence name="Color">0 1 1 1 0 1 1 1 1 0 </ColorSequence>
+							<float name="Drag">0</float>
+							<token name="EmissionDirection">5</token>
+							<bool name="Enabled">true</bool>
+							<NumberRange name="Lifetime">0.1 2 </NumberRange>
+							<float name="LightEmission">0.400000006</float>
+							<float name="LightInfluence">0</float>
+							<bool name="LockedToPart">true</bool>
+							<string name="Name">Flash</string>
+							<float name="Rate">500</float>
+							<NumberRange name="RotSpeed">0 0 </NumberRange>
+							<NumberRange name="Rotation">0 0 </NumberRange>
+							<NumberSequence name="Size">0 0.3125 0 0.399541 0.4375 0 0.706085 0 0 1 0.125 0 </NumberSequence>
+							<int64 name="SourceAssetId">-1</int64>
+							<NumberRange name="Speed">0 0 </NumberRange>
+							<Vector2 name="SpreadAngle">
+								<X>0</X>
+								<Y>0</Y>
+							</Vector2>
+							<BinaryString name="Tags"></BinaryString>
+							<Content name="Texture"><url>rbxassetid://421803006</url></Content>
+							<NumberSequence name="Transparency">0 1 0 1 1 0 </NumberSequence>
+							<float name="VelocityInheritance">0</float>
+							<float name="ZOffset">0</float>
+						</Properties>
+						<Item class="NumberValue" referent="RBXD1DFE91AE0704191BC76B87286E5C7DB">
+							<Properties>
+								<BinaryString name="AttributesSerialize"></BinaryString>
+								<string name="Name">_Transparency</string>
+								<int64 name="SourceAssetId">-1</int64>
+								<BinaryString name="Tags"></BinaryString>
+								<double name="Value">0.4000000000000000222</double>
+							</Properties>
+						</Item>
+					</Item>
 				</Item>
 				<Item class="Folder" referent="RBX13381D117773436BA7A2BB66EE1B3D36">
 					<Properties>
@@ -5049,9 +5155,64 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 							<bool name="Value">true</bool>
 						</Properties>
 					</Item>
+					<Item class="BoolValue" referent="RBXBCAA5B5251924BDCB9361B2109541A09">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<string name="Name">Automatic</string>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<bool name="Value">true</bool>
+						</Properties>
+					</Item>
+				</Item>
+				<Item class="Folder" referent="RBX4901677EF80143F0A672BD633E651E68">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<string name="Name">Sounds</string>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+					<Item class="Sound" referent="RBX92103A3CBF75427E805BF73FC95DE5B2">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<float name="EmitterSize">10</float>
+							<bool name="Looped">false</bool>
+							<string name="Name">Fired</string>
+							<bool name="PlayOnRemove">false</bool>
+							<float name="PlaybackSpeed">1</float>
+							<bool name="Playing">false</bool>
+							<token name="RollOffMode">0</token>
+							<Ref name="SoundGroup">null</Ref>
+							<Content name="SoundId"><url>rbxassetid://3806349898</url></Content>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<double name="TimePosition">0</double>
+							<float name="Volume">0.5</float>
+							<float name="xmlRead_MaxDistance_3">10000</float>
+						</Properties>
+					</Item>
+					<Item class="Sound" referent="RBX5CAF873BA6C0498487453046967CAEAF">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<float name="EmitterSize">10</float>
+							<bool name="Looped">false</bool>
+							<string name="Name">Reload</string>
+							<bool name="PlayOnRemove">false</bool>
+							<float name="PlaybackSpeed">1</float>
+							<bool name="Playing">false</bool>
+							<token name="RollOffMode">0</token>
+							<Ref name="SoundGroup">null</Ref>
+							<Content name="SoundId"><url>rbxassetid://3821787597</url></Content>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<double name="TimePosition">0</double>
+							<float name="Volume">0.5</float>
+							<float name="xmlRead_MaxDistance_3">10000</float>
+						</Properties>
+					</Item>
 				</Item>
 			</Item>
-			<Item class="Model" referent="RBXFD51C3BC15E14F4598F4FA331B259FB0">
+			<Item class="Model" referent="RBX85F7FEECAB374E4A8F1DBA0A2EEECF78">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<token name="LevelOfDetail">0</token>
@@ -5090,11 +5251,11 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 						<Z>0</Z>
 					</Vector3>
 					<string name="Name">ARClone</string>
-					<Ref name="PrimaryPart">RBXE623B9151B7043B88870051FA87B7D48</Ref>
+					<Ref name="PrimaryPart">RBX89CDCAE350FA411E932D63AF4DB515BE</Ref>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="MeshPart" referent="RBX2E59698A18844E03855F974D5387F0B3">
+				<Item class="MeshPart" referent="RBX359A1137DF6C4DF1A3F8CE319F7DF948">
 					<Properties>
 						<bool name="Anchored">false</bool>
 						<BinaryString name="AttributesSerialize"></BinaryString>
@@ -5189,7 +5350,7 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 						</Vector3>
 					</Properties>
 				</Item>
-				<Item class="MeshPart" referent="RBXCAF197D77B4F48D78D49C020FA6714C4">
+				<Item class="MeshPart" referent="RBX6B4D660EF68A405EB9AF5DE3F23455B0">
 					<Properties>
 						<bool name="Anchored">false</bool>
 						<BinaryString name="AttributesSerialize"></BinaryString>
@@ -5284,7 +5445,7 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 						</Vector3>
 					</Properties>
 				</Item>
-				<Item class="MeshPart" referent="RBX76CB657DA4FA4AFAB09DCA7DE14A5B60">
+				<Item class="MeshPart" referent="RBX34F62D67219F4801B95F8D9A993DBD28">
 					<Properties>
 						<bool name="Anchored">false</bool>
 						<BinaryString name="AttributesSerialize"></BinaryString>
@@ -5379,7 +5540,7 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 						</Vector3>
 					</Properties>
 				</Item>
-				<Item class="Part" referent="RBXE623B9151B7043B88870051FA87B7D48">
+				<Item class="Part" referent="RBX89CDCAE350FA411E932D63AF4DB515BE">
 					<Properties>
 						<bool name="Anchored">false</bool>
 						<BinaryString name="AttributesSerialize"></BinaryString>
@@ -5455,7 +5616,7 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 							<Z>0.609999955</Z>
 						</Vector3>
 					</Properties>
-					<Item class="Sound" referent="RBX3579F419AED3474B91E2059C870CCFA2">
+					<Item class="Sound" referent="RBXAF9E6054F4234417BAB71CFCB39F048B">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<float name="EmitterSize">10</float>
@@ -5474,7 +5635,7 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 							<float name="xmlRead_MaxDistance_3">10000</float>
 						</Properties>
 					</Item>
-					<Item class="Sound" referent="RBX6D99731CB180402D8BEEC3DDF45E69E4">
+					<Item class="Sound" referent="RBX2FD1C342B4234D3AA022990E411D6448">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<float name="EmitterSize">10</float>
@@ -5493,7 +5654,7 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 							<float name="xmlRead_MaxDistance_3">10000</float>
 						</Properties>
 					</Item>
-					<Item class="Motor6D" referent="RBX682D713D5D9541908E1148781B496825">
+					<Item class="Motor6D" referent="RBX2621F824B1E646BF9B1C38A9DFE4B69D">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<CoordinateFrame name="C0">
@@ -5528,13 +5689,13 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 							<bool name="Enabled">true</bool>
 							<float name="MaxVelocity">0</float>
 							<string name="Name">Rifle</string>
-							<Ref name="Part0">RBXE623B9151B7043B88870051FA87B7D48</Ref>
-							<Ref name="Part1">RBX2E59698A18844E03855F974D5387F0B3</Ref>
+							<Ref name="Part0">RBX89CDCAE350FA411E932D63AF4DB515BE</Ref>
+							<Ref name="Part1">RBX359A1137DF6C4DF1A3F8CE319F7DF948</Ref>
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
-					<Item class="Motor6D" referent="RBXC2EBA06162A94CC1B5AAC31EFF5064A9">
+					<Item class="Motor6D" referent="RBXCF0219AA5E6246AABAB7CDBD0299F15B">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<CoordinateFrame name="C0">
@@ -5569,13 +5730,13 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 							<bool name="Enabled">true</bool>
 							<float name="MaxVelocity">0</float>
 							<string name="Name">Magazine</string>
-							<Ref name="Part0">RBXE623B9151B7043B88870051FA87B7D48</Ref>
-							<Ref name="Part1">RBXCAF197D77B4F48D78D49C020FA6714C4</Ref>
+							<Ref name="Part0">RBX89CDCAE350FA411E932D63AF4DB515BE</Ref>
+							<Ref name="Part1">RBX6B4D660EF68A405EB9AF5DE3F23455B0</Ref>
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
-					<Item class="Motor6D" referent="RBX31BC0536006748F8877941346481D810">
+					<Item class="Motor6D" referent="RBXE39BD440F2C542928943D0CD273783E4">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<CoordinateFrame name="C0">
@@ -5610,14 +5771,55 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 							<bool name="Enabled">true</bool>
 							<float name="MaxVelocity">0</float>
 							<string name="Name">Bolt</string>
-							<Ref name="Part0">RBXE623B9151B7043B88870051FA87B7D48</Ref>
-							<Ref name="Part1">RBX76CB657DA4FA4AFAB09DCA7DE14A5B60</Ref>
+							<Ref name="Part0">RBX89CDCAE350FA411E932D63AF4DB515BE</Ref>
+							<Ref name="Part1">RBX34F62D67219F4801B95F8D9A993DBD28</Ref>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+						</Properties>
+					</Item>
+					<Item class="Motor6D" referent="RBX7267E0EFDC344A578C9CFE8A53877035">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<CoordinateFrame name="C0">
+								<X>0</X>
+								<Y>0.420000076</Y>
+								<Z>-2.75999832</Z>
+								<R00>1</R00>
+								<R01>0</R01>
+								<R02>0</R02>
+								<R10>0</R10>
+								<R11>1</R11>
+								<R12>0</R12>
+								<R20>0</R20>
+								<R21>0</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<CoordinateFrame name="C1">
+								<X>0</X>
+								<Y>0</Y>
+								<Z>0</Z>
+								<R00>1</R00>
+								<R01>0</R01>
+								<R02>0</R02>
+								<R10>0</R10>
+								<R11>1</R11>
+								<R12>0</R12>
+								<R20>0</R20>
+								<R21>0</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<float name="DesiredAngle">0</float>
+							<bool name="Enabled">true</bool>
+							<float name="MaxVelocity">0</float>
+							<string name="Name">Barrel</string>
+							<Ref name="Part0">RBX89CDCAE350FA411E932D63AF4DB515BE</Ref>
+							<Ref name="Part1">RBXA5D40E9C23CA4A5E8077CA1B89F081CB</Ref>
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
 				</Item>
-				<Item class="Part" referent="RBX3496CCB19E2845CC846F60C4CE85E3CB">
+				<Item class="Part" referent="RBXA5D40E9C23CA4A5E8077CA1B89F081CB">
 					<Properties>
 						<bool name="Anchored">false</bool>
 						<BinaryString name="AttributesSerialize"></BinaryString>
@@ -5693,15 +5895,58 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 							<Z>0.24999997</Z>
 						</Vector3>
 					</Properties>
+					<Item class="ParticleEmitter" referent="RBX607B5DB4390A48A4AED73ACA4B13910E">
+						<Properties>
+							<Vector3 name="Acceleration">
+								<X>0</X>
+								<Y>0</Y>
+								<Z>0</Z>
+							</Vector3>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<ColorSequence name="Color">0 1 1 1 0 1 1 1 1 0 </ColorSequence>
+							<float name="Drag">0</float>
+							<token name="EmissionDirection">5</token>
+							<bool name="Enabled">true</bool>
+							<NumberRange name="Lifetime">0.1 2 </NumberRange>
+							<float name="LightEmission">0.400000006</float>
+							<float name="LightInfluence">0</float>
+							<bool name="LockedToPart">true</bool>
+							<string name="Name">Flash</string>
+							<float name="Rate">500</float>
+							<NumberRange name="RotSpeed">0 0 </NumberRange>
+							<NumberRange name="Rotation">0 0 </NumberRange>
+							<NumberSequence name="Size">0 0.3125 0 0.399541 0.4375 0 0.706085 0 0 1 0.125 0 </NumberSequence>
+							<int64 name="SourceAssetId">-1</int64>
+							<NumberRange name="Speed">0 0 </NumberRange>
+							<Vector2 name="SpreadAngle">
+								<X>0</X>
+								<Y>0</Y>
+							</Vector2>
+							<BinaryString name="Tags"></BinaryString>
+							<Content name="Texture"><url>rbxassetid://421803006</url></Content>
+							<NumberSequence name="Transparency">0 1 0 1 1 0 </NumberSequence>
+							<float name="VelocityInheritance">0</float>
+							<float name="ZOffset">0</float>
+						</Properties>
+						<Item class="NumberValue" referent="RBX05E7A488E0CF459DB4C8CF71F4548718">
+							<Properties>
+								<BinaryString name="AttributesSerialize"></BinaryString>
+								<string name="Name">_Transparency</string>
+								<int64 name="SourceAssetId">-1</int64>
+								<BinaryString name="Tags"></BinaryString>
+								<double name="Value">0.4000000000000000222</double>
+							</Properties>
+						</Item>
+					</Item>
 				</Item>
-				<Item class="Folder" referent="RBXA29E320451B644319CD3697F36C24192">
+				<Item class="Folder" referent="RBXC9F9E2C15F374C1790ACFE12416C18FF">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<string name="Name">Animations</string>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
-					<Item class="Animation" referent="RBX59A7B9B5D53249819D02E893B94AAA25">
+					<Item class="Animation" referent="RBX075BF1F10DBB49B283410D1129901E5F">
 						<Properties>
 							<Content name="AnimationId"><url>rbxassetid://6119211266</url></Content>
 							<BinaryString name="AttributesSerialize"></BinaryString>
@@ -5711,14 +5956,14 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 						</Properties>
 					</Item>
 				</Item>
-				<Item class="Folder" referent="RBX92AF1DF98C664FF6A300CD6800149CD6">
+				<Item class="Folder" referent="RBXF039005C426F4C2E9A70B6097A93E9A2">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<string name="Name">Placing</string>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
-					<Item class="CFrameValue" referent="RBXE49C56B1B7DC4F02A7DEA858FB574D25">
+					<Item class="CFrameValue" referent="RBXED2561840FDD43A6859C04578F1EA11B">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<string name="Name">ViewmodelOffset</string>
@@ -5740,7 +5985,7 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 							</CoordinateFrame>
 						</Properties>
 					</Item>
-					<Item class="CFrameValue" referent="RBXB971C87ED00B4559AD4357F913F31C91">
+					<Item class="CFrameValue" referent="RBXDFC2D3DBAD3F4A368E2FD6F9C22E3D85">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<string name="Name">AimOffset</string>
@@ -5762,7 +6007,7 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 							</CoordinateFrame>
 						</Properties>
 					</Item>
-					<Item class="CFrameValue" referent="RBX121D325307CC4DEABDFEADD6C21C417B">
+					<Item class="CFrameValue" referent="RBXA3B9DD08EFB34C489451FD5C6804BE20">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<string name="Name">DefaultOffset</string>
@@ -5785,20 +6030,84 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 						</Properties>
 					</Item>
 				</Item>
-				<Item class="Folder" referent="RBXE9B941D19813469EB261A99A25201B16">
+				<Item class="Folder" referent="RBX8F1E1B94964F4FB2A3ED5CA10D4619B0">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<string name="Name">Configurations</string>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
-					<Item class="BoolValue" referent="RBX40C5B9895B2648998D26003E34AD0378">
+					<Item class="BoolValue" referent="RBXE6FAAED9E2BE4282A3A0618DE531A81A">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<string name="Name">Aimable</string>
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 							<bool name="Value">true</bool>
+						</Properties>
+					</Item>
+					<Item class="BoolValue" referent="RBXD0ED1BFF3FC74D999AC409F6058227F2">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<string name="Name">Shootable</string>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<bool name="Value">true</bool>
+						</Properties>
+					</Item>
+					<Item class="BoolValue" referent="RBX439AA0D3BC6A4C89B9DC4A2ED0C694E1">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<string name="Name">Automatic</string>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<bool name="Value">true</bool>
+						</Properties>
+					</Item>
+				</Item>
+				<Item class="Folder" referent="RBXCBCB8C040579448B8C438E68DBFED5B1">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<string name="Name">Sounds</string>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+					<Item class="Sound" referent="RBX855D5428E7214A8BB16D8A8102152335">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<float name="EmitterSize">10</float>
+							<bool name="Looped">false</bool>
+							<string name="Name">Fired</string>
+							<bool name="PlayOnRemove">false</bool>
+							<float name="PlaybackSpeed">1</float>
+							<bool name="Playing">false</bool>
+							<token name="RollOffMode">0</token>
+							<Ref name="SoundGroup">null</Ref>
+							<Content name="SoundId"><url>rbxassetid://3806349898</url></Content>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<double name="TimePosition">0</double>
+							<float name="Volume">0.5</float>
+							<float name="xmlRead_MaxDistance_3">10000</float>
+						</Properties>
+					</Item>
+					<Item class="Sound" referent="RBX39E8B32D1E624E5E8B2EDB007FA2F15B">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<float name="EmitterSize">10</float>
+							<bool name="Looped">false</bool>
+							<string name="Name">Reload</string>
+							<bool name="PlayOnRemove">false</bool>
+							<float name="PlaybackSpeed">1</float>
+							<bool name="Playing">false</bool>
+							<token name="RollOffMode">0</token>
+							<Ref name="SoundGroup">null</Ref>
+							<Content name="SoundId"><url>rbxassetid://3821787597</url></Content>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<double name="TimePosition">0</double>
+							<float name="Volume">0.5</float>
+							<float name="xmlRead_MaxDistance_3">10000</float>
 						</Properties>
 					</Item>
 				</Item>
