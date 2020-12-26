@@ -30,7 +30,7 @@ function ViewmodelService.new(weaponStorer, viewmodelReference)
 
     self.viewmodelSway = require(clientModules.FpsModules.ViewmodelSwayService).new()
     self.viewmodelAim = require(clientModules.FpsModules.ViewmodelAimService).new()
-    self.viewmodelFiring = require(clientModules.FpsModules.ViewmodelShootService).new()
+    self.viewmodelShooting = require(clientModules.FpsModules.ViewmodelShootService).new()
 
     self.weaponStorer = weaponStorer
     self.weaponConfiguration = nil
@@ -72,8 +72,8 @@ function ViewmodelService:_setupShooting()
     if not shootable then return end
 
     if shootable.Value == true then
-        self.viewmodelFiring:setup(self.viewmodel, self.currentWeapon)
-        self.viewmodelFiring:enableFiring()
+        self.viewmodelShooting:setup(self.viewmodel, self.currentWeapon)
+        self.viewmodelShooting:enableFiring()
     end
 end
 
