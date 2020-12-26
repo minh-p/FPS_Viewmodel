@@ -13,11 +13,11 @@ function ViewmodelSwayService.new()
     self.aimingMultipler = 5
     self.notAimingMultiplier = 10
 
-    self.swayXAimingLimit = 0.02
-    self.swayXNotAimingLimit = 9999999
+    self.swayXAimingLimit = 0.1
+    self.swayXNotAimingLimit = 1
 
-    self.swayYAimingLimit = 0.01
-    self.swayYNotAimingLimit = 999999
+    self.swayYAimingLimit = 0.005
+    self.swayYNotAimingLimit = 0.1
 
     self.multiplier = 10
     

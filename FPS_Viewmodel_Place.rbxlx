@@ -63,18 +63,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-3.31578445</X>
-					<Y>11.2631512</Y>
-					<Z>3.97486067</Z>
-					<R00>0.982548296</R00>
-					<R01>-0.0656575412</R01>
-					<R02>0.174034581</R02>
-					<R10>-0</R10>
-					<R11>0.935629964</R11>
-					<R12>0.352982491</R12>
-					<R20>-0.186007932</R20>
-					<R21>-0.346822351</R21>
-					<R22>0.91930151</R22>
+					<X>-2.93275356</X>
+					<Y>11.2553062</Y>
+					<Z>3.86198115</Z>
+					<R00>0.920778275</R00>
+					<R01>-0.136163518</R01>
+					<R02>0.365550011</R02>
+					<R10>-7.45057971e-09</R10>
+					<R11>0.93710041</R11>
+					<R12>0.349060029</R12>
+					<R20>-0.390086263</R20>
+					<R21>-0.321406901</R21>
+					<R22>0.862861753</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -1937,11 +1937,11 @@ function ViewmodelSwayService.new()
     self.aimingMultipler = 5
     self.notAimingMultiplier = 10
 
-    self.swayXAimingLimit = 0.02
-    self.swayXNotAimingLimit = 9999999
+    self.swayXAimingLimit = 0.1
+    self.swayXNotAimingLimit = 1
 
-    self.swayYAimingLimit = 0.01
-    self.swayYNotAimingLimit = 999999
+    self.swayYAimingLimit = 0.005
+    self.swayYNotAimingLimit = 0.1
 
     self.multiplier = 10
     
