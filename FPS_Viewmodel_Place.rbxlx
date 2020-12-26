@@ -1770,8 +1770,10 @@ function ViewmodelService.new(weaponStorer, viewmodelReference)
 
     self.viewmodelSway = require(clientModules.FpsModules.ViewmodelSwayService).new()
     self.viewmodelAim = require(clientModules.FpsModules.ViewmodelAimService).new()
+    self.viewmodelFiring = require(clientModules.FpsModules.ViewmodelShootService).new()
 
     self.weaponStorer = weaponStorer
+    self.weaponConfiguration = nil
     self.viewmodelReference = viewmodelReference
     self.viewmodel = nil
     self.currentWeapon = nil
@@ -1791,17 +1793,27 @@ end
 
 
 function ViewmodelService:_setupAiming()
-    if not self.viewmodel then return end
+    if not self.weaponConfiguration then return end
 
-    local configurations = self.currentWeapon:FindFirstChild("Configurations")
-    if not configurations then return end
-    
-    local aimable = configurations:FindFirstChild("Aimable")
+    local aimable = self.weaponConfiguration:FindFirstChild("Aimable")
     if not aimable then return end
 
     if aimable.Value == true then
         self.viewmodelAim:setup(self.viewmodel, self.currentWeapon)
         self.viewmodelAim:enableAiming()
+    end
+end
+
+
+function ViewmodelService:_setupShooting()
+    if not self.weaponConfiguration then return end
+
+    local shootable = self.weaponConfiguration:FindFirstChild("Shootable")
+    if not shootable then return end
+
+    if shootable.Value == true then
+        self.viewmodelFiring:setup(self.viewmodel, self.currentWeapon)
+        self.viewmodelFiring:enableFiring()
     end
 end
 
@@ -1833,6 +1845,13 @@ function ViewmodelService:_runViewmodel()
 
     self.viewmodelRenderEvent = RunService.RenderStepped:Connect(moveViewmodel)
 
+    if not self.viewmodel then return end
+
+    local configuration = self.currentWeapon:FindFirstChild("Configurations")
+    if not configuration then return end
+    self.weaponConfiguration = configuration
+
+    self:_setupShooting()
     self:_setupAiming()
 end
 
@@ -2143,12 +2162,12 @@ return ViewmodelAimService]]></ProtectedString>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
-					<Item class="ModuleScript" referent="RBXBB38EF96F2274549A1D40DBD85ECE0F6">
+					<Item class="ModuleScript" referent="RBX29761929142345C0BE32E7618279AFFD">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<Content name="LinkedSource"><null></null></Content>
-							<string name="Name">ViewmodelFiringService</string>
-							<string name="ScriptGuid"></string>
+							<string name="Name">ViewmodelShootService</string>
+							<string name="ScriptGuid">{D7D3A4C2-2203-47D2-B039-99834A64E31C}</string>
 							<ProtectedString name="Source"><![CDATA[-- Enable the ability to fire weapons (on the viewmodel).
 -- 12/26/2020
 -- Minhnormal
@@ -2196,7 +2215,7 @@ end
 
 function ViewmodelFiringService:_bindFiring()
     local function handleFiring()
-        
+        print("FIRE")
     end
 
     ContextActionService:BindAction(self.firingActionName, handleFiring, true, table.unpack(self.firingInputs))
@@ -5015,6 +5034,15 @@ ClientWeaponService:bindEquipViewmodelWeapons()]]></ProtectedString>
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<string name="Name">Aimable</string>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<bool name="Value">true</bool>
+						</Properties>
+					</Item>
+					<Item class="BoolValue" referent="RBX11715E974BFF43E482B13F71EE1F57B2">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<string name="Name">Shootable</string>
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 							<bool name="Value">true</bool>

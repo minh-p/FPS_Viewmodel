@@ -45,7 +45,7 @@ end
 
 function ViewmodelFiringService:_bindFiring()
     local function handleFiring()
-        
+        print("FIRE")
     end
 
     ContextActionService:BindAction(self.firingActionName, handleFiring, true, table.unpack(self.firingInputs))

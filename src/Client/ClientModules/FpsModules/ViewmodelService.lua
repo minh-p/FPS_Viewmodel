@@ -30,8 +30,10 @@ function ViewmodelService.new(weaponStorer, viewmodelReference)
 
     self.viewmodelSway = require(clientModules.FpsModules.ViewmodelSwayService).new()
     self.viewmodelAim = require(clientModules.FpsModules.ViewmodelAimService).new()
+    self.viewmodelFiring = require(clientModules.FpsModules.ViewmodelShootService).new()
 
     self.weaponStorer = weaponStorer
+    self.weaponConfiguration = nil
     self.viewmodelReference = viewmodelReference
     self.viewmodel = nil
     self.currentWeapon = nil
@@ -51,17 +53,27 @@ end
 
 
 function ViewmodelService:_setupAiming()
-    if not self.viewmodel then return end
+    if not self.weaponConfiguration then return end
 
-    local configurations = self.currentWeapon:FindFirstChild("Configurations")
-    if not configurations then return end
-    
-    local aimable = configurations:FindFirstChild("Aimable")
+    local aimable = self.weaponConfiguration:FindFirstChild("Aimable")
     if not aimable then return end
 
     if aimable.Value == true then
         self.viewmodelAim:setup(self.viewmodel, self.currentWeapon)
         self.viewmodelAim:enableAiming()
+    end
+end
+
+
+function ViewmodelService:_setupShooting()
+    if not self.weaponConfiguration then return end
+
+    local shootable = self.weaponConfiguration:FindFirstChild("Shootable")
+    if not shootable then return end
+
+    if shootable.Value == true then
+        self.viewmodelFiring:setup(self.viewmodel, self.currentWeapon)
+        self.viewmodelFiring:enableFiring()
     end
 end
 
@@ -93,6 +105,13 @@ function ViewmodelService:_runViewmodel()
 
     self.viewmodelRenderEvent = RunService.RenderStepped:Connect(moveViewmodel)
 
+    if not self.viewmodel then return end
+
+    local configuration = self.currentWeapon:FindFirstChild("Configurations")
+    if not configuration then return end
+    self.weaponConfiguration = configuration
+
+    self:_setupShooting()
     self:_setupAiming()
 end
 
