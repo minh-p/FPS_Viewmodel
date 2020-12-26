@@ -161,6 +161,7 @@ function ViewmodelService:unequipWeapon()
     self.currentWeapon = nil
 
     self.viewmodelAim:disableAiming()
+    self.viewmodelShooting:disableShooting()
     self.viewmodelRenderEvent:Disconnect()
     self.viewmodelRenderEvent = nil
 
