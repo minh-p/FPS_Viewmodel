@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-12-26T21:50:19.892Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36 Edg/87.0.664.66" etag="rGHKJgldsfUihgzu_1h7" version="14.1.2" type="github">
+<mxfile host="app.diagrams.net" modified="2020-12-26T22:26:27.429Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36 Edg/87.0.664.66" etag="31V4p-l6SBOjDZ4r_XUS" version="14.1.2" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="598" dy="816" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -105,7 +105,7 @@
         <mxCell id="K4ozqX_vmc0rlFVJ7323-2" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="K4ozqX_vmc0rlFVJ7323-0">
           <mxGeometry y="52" width="220" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="K4ozqX_vmc0rlFVJ7323-3" value="+ new(): new ViewmodelRecoilService&#xa;- _getRecoilRate(RPM): void&#xa;+ applyRecoil(RPM): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="K4ozqX_vmc0rlFVJ7323-0">
+        <mxCell id="K4ozqX_vmc0rlFVJ7323-3" value="+ new(): new ViewmodelRecoilService&#xa;+ applyRecoil(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="K4ozqX_vmc0rlFVJ7323-0">
           <mxGeometry y="60" width="220" height="50" as="geometry" />
         </mxCell>
         <mxCell id="K4ozqX_vmc0rlFVJ7323-4" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" target="K4ozqX_vmc0rlFVJ7323-0">
