@@ -2355,14 +2355,14 @@ function RecoilService:applyRecoil()
     self.currentShots = (tick()-self.lastClick > self.recoilReset and 1 or self.currentShots + 1)
     self.lastClick = tick()
 
-    for _, value in pairs(self.recoilPattern) do
-        if self.currentShots <= value[1] then -- Found the current recoil we're at.
+    for _, recoil in pairs(self.recoilPattern) do
+        if self.currentShots <= recoil[1] then -- Found the current recoil we're at.
             spawn(function ()
                 local number = 0
-                while math.abs(number-value[2]) > 0.01 do
-                    number = lerp(number, value[2], value[4])
-                    local recoil = number / 10
-                    workspace.CurrentCamera.CFrame *= CFrame.Angles(math.rad(recoil), math.rad(recoil*value[5]), 0)
+                while math.abs(number-recoil[2]) > 0.01 do
+                    number = lerp(number, recoil[2], recoil[4])
+                    local recoilApply = number / 10
+                    workspace.CurrentCamera.CFrame *= CFrame.Angles(math.rad(recoilApply), math.rad(recoilApply*recoil[5]), 0)
                     RunService.RenderStepped:Wait()
                 end
             end)
